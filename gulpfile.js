@@ -1,0 +1,181 @@
+'use strict';
+
+var autoprefixer = require('gulp-autoprefixer'),
+    concat = require('gulp-concat'),
+    gulp         = require('gulp'),
+    imagemin     = require('gulp-imagemin'),
+    jade         = require('gulp-jade'),
+    plumber      = require('gulp-plumber'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    watch        = require('gulp-watch'),
+    gutil        = require('gulp-util'),
+    rename       = require('gulp-rename'),
+    rimraf       = require('rimraf'),
+    seq          = require('run-sequence'),
+    sass         = require('gulp-sass'),
+    browserSync  = require('browser-sync'),
+    minifyCss   = require('gulp-minify-css'),
+    uglify = require('gulp-uglify');
+
+/* ==========================================================================
+ Variables
+ ========================================================================== */
+
+var vendor = 'node_modules/';
+
+var paths = {
+    jade: 'src/**/*.jade',
+    jadePages: 'src/*.jade',
+    sass: 'src/sass/**/*.scss',
+    fonts: 'src/fonts/*',
+    js: 'src/js/**/*.js',
+    img: 'src/img/*',
+    libs: {
+        js: [
+            vendor + 'jquery/dist/jquery.min.js',
+            vendor + 'bootstrap/dist/**/*.js'
+        ],
+        css: []
+    }
+};
+
+/* ==========================================================================
+ Error handler
+ ========================================================================== */
+
+var onError = function(err) {
+    var errorLine = (err.line) ? 'Line ' + err.line : '',
+        errorTitle  = (err.plugin) ? 'Error: [ ' + err.plugin + ' ]' : 'Error';
+
+    notify.logLevel(0);
+    notify({
+        title: errorTitle,
+        message: errorLine
+    }).write(err);
+    beep();
+    gutil.log(gutil.colors.red('\n' + errorTitle + '\n\n', err.message));
+    this.emit('end');
+};
+
+/* ==========================================================================
+ Tasks
+ ========================================================================== */
+
+gulp.task('default', function(cb) {
+    seq('watch', 'server', cb);
+});
+
+gulp.task('build', function(cb) {
+    seq('clean',['html', 'sass', 'fonts', 'js', 'img', 'css:libs', 'js:libs'], cb);
+});
+
+gulp.task('watch', ['build'], function() {
+    watch( paths.jade,      function() { seq('html');       });
+    watch( paths.sass,      function() { seq('sass');        });
+    watch( paths.fonts,     function() { seq('fonts');      });
+    watch( paths.js,        function() { seq('js');         });
+    watch( paths.img,       function() { seq('img');        });
+});
+
+gulp.task('clean', function(cb) {
+    rimraf('dist', cb);
+});
+
+gulp.task('server', function() {
+    browserSync({
+        server: {
+            baseDir: 'dist'
+        },
+        notify: false
+    });
+});
+
+gulp.task('html', function() {
+    return gulp.src( paths.jadePages )
+        .pipe( plumber({ errorHandler: onError }))
+        .pipe( jade({ pretty: true }) )
+        .pipe( gulp.dest('dist') )
+        .pipe( browserSync.reload({stream: true}) );
+});
+
+gulp.task('sass', function() {
+    return gulp.src('src/sass/**/*.scss')
+        .pipe(sass())
+        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true}))
+        .pipe( plumber({ errorHandler: onError }))
+        .pipe( sourcemaps.init() )
+        .pipe( minifyCss({compatibility: 'ie8', keepBreaks: true}) )
+        .pipe( sourcemaps.write('./') )
+        .pipe( gulp.dest('dist/assets/css') )
+        .pipe( browserSync.reload({stream: true}) );
+});
+
+gulp.task('fonts', function() {
+    return gulp.src( paths.fonts )
+        .pipe( gulp.dest('dist/assets/fonts') )
+        .pipe( browserSync.reload({stream: true}) );
+});
+
+gulp.task('js', function() {
+    return gulp.src(paths.js)
+        .pipe(concat('app.js'))
+        //.pipe(uglify())
+        .pipe(rename('app.js'))
+        .pipe(gulp.dest('dist/assets/js/'))
+        .pipe( browserSync.reload({stream: true}) );
+});
+
+gulp.task('img', function () {
+    return gulp.src( paths.img )
+        .pipe( imagemin({
+            optimizationLevel: 2,
+            progressive: true,
+            interlaced: true,
+            multipass: true
+        }))
+        .pipe( gulp.dest('dist/assets/img') )
+        .pipe( browserSync.reload({stream: true}) );
+});
+
+/* ==========================================================================
+ Tasks for production
+ ========================================================================== */
+gulp.task('sass:min', function() {
+    return gulp.src('src/sass/**/*.scss')
+        .pipe(sass())
+        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true}))
+        .pipe( plumber({ errorHandler: onError }))
+        .pipe( sourcemaps.init() )
+        .pipe( minifyCss({compatibility: 'ie8', keepBreaks: false}) )
+        .pipe( sourcemaps.write('./') )
+        .pipe( gulp.dest('dist/assets/css') )
+        .pipe( browserSync.reload({stream: true}) );
+});
+
+gulp.task('js:min', function() {
+    return gulp.src(paths.js)
+        .pipe(concat('app.js'))
+        .pipe(uglify())
+        .pipe(rename('app.min.js'))
+        .pipe(gulp.dest('dist/assets/js/'))
+        .pipe( browserSync.reload({stream: true}) );
+});
+
+/* ==========================================================================
+ Tasks for libs
+ ========================================================================== */
+gulp.task('css:libs', function() {
+    return gulp.src('node_modules/bootstrap/scss/bootstrap.scss')
+        .pipe(sass())
+        .pipe(minifyCss({keepBreaks: false}))
+        .pipe(rename('core.min.css'))
+        .pipe(gulp.dest('dist/assets/css/'));
+});
+
+gulp.task('js:libs', function() {
+    return gulp.src(paths.libs.js)
+        .pipe(concat('core.js'))
+        .pipe(uglify())
+        .pipe(rename('core.min.js'))
+        .pipe(gulp.dest('dist/assets/js/'))
+});
