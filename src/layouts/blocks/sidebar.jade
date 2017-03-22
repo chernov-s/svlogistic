@@ -1,0 +1,23 @@
+//- Main menu
+-
+    menuList = [
+        {
+            'label': 'Главная',
+            'url': '/index.html'
+        }, {
+            'label': 'Услуги',
+            'url': '/service.html'
+        }, {
+            'label': 'Факты о нас',
+            'url': '/facts.html'
+        }
+    ];
+
+mixin nav(item)
+    li.b-sidebar-menu__list-item
+        a.nav-link(href=item.url)=item.label
+.b-sidebar-menu
+    .b-sidebar-menu__wrap
+        ul.b-sidebar-menu__list.nav.flex-column
+            for menu in menuList
+                +nav(menu)

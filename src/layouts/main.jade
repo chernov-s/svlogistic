@@ -7,11 +7,14 @@ html(lang="ru")
         link(rel="stylesheet", href="assets/css/main.css")
 
     body
-        include header
+        include blocks/header
+        .row
+            .col-sm-2
+                include blocks/sidebar
+            .col-sm-10
+                block content
 
-        block content
-
-        include footer
+        include blocks/footer
 
         script(src="assets/js/core.min.js")
         script(src="assets/js/app.js")

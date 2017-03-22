@@ -1,6 +1,6 @@
-body {
-  color: #000ccc;
-}
-.test {
-  border-radius: 3px;
-}
+@import 'helpers/variables';
+
+@import "blocks/header";
+@import "blocks/sidebar";
+
+@import "components/pages";

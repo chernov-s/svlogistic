@@ -1,0 +1,16 @@
+.b-pages {
+  height: 100%;
+  position: relative;
+  &__list {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    transition: all 700ms ease;
+  }
+  &__item {
+    width: 50%;
+    float: left;
+    position: relative;
+    height: 100%;
+  }
+}
