@@ -2,19 +2,19 @@ doctype html
 html(lang="ru")
     head
         meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
         block title
         link(rel="stylesheet", href="assets/css/core.min.css")
         link(rel="stylesheet", href="assets/css/main.css")
-
     body
         include blocks/header
         .row
-            .col-sm-2
+            .col-sm-4.col-md-2
                 include blocks/sidebar
-            .col-sm-10
+            .col-sm-8.col-md-10
                 block content
 
         include blocks/footer
+    script(src="assets/js/core.min.js")
+    script(src="assets/js/app.js")
 
-        script(src="assets/js/core.min.js")
-        script(src="assets/js/app.js")

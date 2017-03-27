@@ -21,7 +21,8 @@ var autoprefixer = require('gulp-autoprefixer'),
  Variables
  ========================================================================== */
 
-var vendor = 'node_modules/';
+var modules = 'node_modules/',
+    vendor = 'src/vendor/';
 
 var paths = {
     jade: 'src/**/*.jade',
@@ -32,8 +33,10 @@ var paths = {
     img: 'src/img/*',
     libs: {
         js: [
-            vendor + 'jquery/dist/jquery.min.js',
-            vendor + 'bootstrap/dist/**/*.js'
+            modules + 'jquery/dist/jquery.min.js',
+            //modules + 'bootstrap/dist/js/bootstrap.js',
+            //modules + 'jquery.nicescroll/jquery.nicescroll.min.js',
+            modules + 'fullpage.js/dist/jquery.fullpage.min.js',
         ],
         css: []
     }

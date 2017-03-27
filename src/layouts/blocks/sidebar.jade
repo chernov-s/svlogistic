@@ -3,21 +3,30 @@
     menuList = [
         {
             'label': 'Главная',
-            'url': '/index.html'
+            'url': '#home'
         }, {
             'label': 'Услуги',
-            'url': '/service.html'
+            'url': '#service'
         }, {
             'label': 'Факты о нас',
-            'url': '/facts.html'
+            'url': '#facts'
+        }, {
+            'label': 'Автопарк',
+            'url': '#home'
+        }, {
+            'label': 'Как мы работаем',
+            'url': '#home'
+        }, {
+            'label': 'Они довольны нами',
+            'url': '#home'
         }
     ];
 
 mixin nav(item)
-    li.b-sidebar-menu__list-item
+    li.b-sidebar__list-item
         a.nav-link(href=item.url)=item.label
-.b-sidebar-menu
-    .b-sidebar-menu__wrap
-        ul.b-sidebar-menu__list.nav.flex-column
+.b-sidebar
+    .b-sidebar__wrap
+        ul.b-sidebar__list.nav.flex-column
             for menu in menuList
                 +nav(menu)

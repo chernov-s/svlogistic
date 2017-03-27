@@ -4,13 +4,12 @@
   &__list {
     position: relative;
     height: 100%;
-    width: 200%;
-    transition: all 700ms ease;
   }
   &__item {
-    width: 50%;
     float: left;
     position: relative;
     height: 100%;
+    width: 100%;
+    border-right: 1px solid #f00;
   }
 }
