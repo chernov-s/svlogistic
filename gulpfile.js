@@ -37,6 +37,7 @@ var paths = {
             //modules + 'bootstrap/dist/js/bootstrap.js',
             //modules + 'jquery.nicescroll/jquery.nicescroll.min.js',
             modules + 'fullpage.js/dist/jquery.fullpage.min.js',
+            modules + 'fullpage.js/dist/jquery.fullpage.extensions.min.js'
         ],
         css: []
     }

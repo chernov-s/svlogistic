@@ -20,7 +20,10 @@ var FullPage = (function($) {
                 scrollHorizontally: true,
                 easing: 'easeInOutCubic',
                 easingcss3: 'ease',
-                sectionSelector: '.b-pages__item'
+                sectionSelector: '.b-pages__item',
+                onLeave: function(index, nextIndex, direction){
+                    console.log(index, nextIndex, direction);
+                },
             });
             this.event();
         },
