@@ -12,7 +12,22 @@
     background-color: white;
   }
   &__list {
-
+    li {
+      position: relative;
+      a {
+        &:after, &:before {
+          top: 50%;
+          height: 2px;
+          width: 10px;
+          display: none;
+        }
+        &.active {
+          &:after, &:before {
+            display: inline-block;
+          }
+        }
+      }
+    }
   }
   &__item {
 

@@ -2,5 +2,12 @@
 
 @import "blocks/header";
 @import "blocks/sidebar";
+@import "blocks/content";
 
 @import "components/pages";
+@import "components/buttons";
+@import "components/arrow";
+
+.b-main {
+  height: 100%;
+}

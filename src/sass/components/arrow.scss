@@ -1,0 +1,26 @@
+.b-arrow {
+    &:hover, &:focus {
+      &:before, &:after {
+        background: $black-2;
+      }
+    }
+    &:before, &:after {
+      background: $black-1;
+      right: 10px;
+      content: '';
+      margin-top: 1px;
+      display: inline-block;
+      height: 2px;
+      width: .8em;
+      position: absolute;
+      transform-origin: 9px 50%;
+    }
+    &:before {
+      transform: rotate(45deg);
+      top: 35%;
+    }
+    &:after {
+      transform: rotate(-45deg);
+      top: 55%;
+    }
+}

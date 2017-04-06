@@ -1,21 +1,22 @@
 'use strict';
 
-var autoprefixer = require('gulp-autoprefixer'),
-    concat = require('gulp-concat'),
-    gulp = require('gulp'),
-    imagemin = require('gulp-imagemin'),
-    jade = require('gulp-jade'),
-    plumber = require('gulp-plumber'),
-    sourcemaps = require('gulp-sourcemaps'),
-    watch = require('gulp-watch'),
-    gutil = require('gulp-util'),
-    rename = require('gulp-rename'),
-    rimraf = require('rimraf'),
-    seq = require('run-sequence'),
-    sass = require('gulp-sass'),
-    browserSync = require('browser-sync'),
-    minifyCss = require('gulp-minify-css'),
-    uglify = require('gulp-uglify');
+var autoprefixer    = require('gulp-autoprefixer'),
+    concat          = require('gulp-concat'),
+    gulp            = require('gulp'),
+    imagemin        = require('gulp-imagemin'),
+    jade            = require('gulp-jade'),
+    plumber         = require('gulp-plumber'),
+    sourcemaps      = require('gulp-sourcemaps'),
+    watch           = require('gulp-watch'),
+    gutil           = require('gulp-util'),
+    rename          = require('gulp-rename'),
+    minifyCss       = require('gulp-minify-css'),
+    include         = require('gulp-include'),
+    uglify          = require('gulp-uglify'),
+    rimraf          = require('rimraf'),
+    seq             = require('run-sequence'),
+    sass            = require('gulp-sass'),
+    browserSync     = require('browser-sync');
 
 /* ==========================================================================
  Variables
@@ -30,14 +31,17 @@ var paths = {
     sass: 'src/sass/**/*.scss',
     fonts: 'src/fonts/*',
     js: 'src/js/**/*.js',
+    jsApp: 'src/js/app.js',
     img: 'src/img/*',
     libs: {
         js: [
             modules + 'jquery/dist/jquery.min.js',
             //modules + 'bootstrap/dist/js/bootstrap.js',
             //modules + 'jquery.nicescroll/jquery.nicescroll.min.js',
+            vendor + 'jquery.ascensor.min.js',
+            vendor + 'jquery.mousewheel.min.js',
             modules + 'fullpage.js/dist/jquery.fullpage.min.js',
-            modules + 'fullpage.js/dist/jquery.fullpage.extensions.min.js'
+            //modules + 'fullpage.js/dist/jquery.fullpage.extensions.min.js'
         ],
         css: []
     }
@@ -126,8 +130,10 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src(paths.js)
-        .pipe(concat('app.js'))
+    return gulp.src(paths.jsApp)
+        .pipe(include())
+        .on('error', console.log)
+        //.pipe(concat('app.js'))
         //.pipe(uglify())
         .pipe(rename('app.js'))
         .pipe(gulp.dest('dist/assets/js/'))

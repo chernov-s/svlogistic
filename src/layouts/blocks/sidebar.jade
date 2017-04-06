@@ -12,21 +12,33 @@
             'url': '#facts'
         }, {
             'label': 'Автопарк',
-            'url': '#home'
+            'url': '#auto-park'
         }, {
             'label': 'Как мы работаем',
-            'url': '#home'
+            'url': '#working'
         }, {
             'label': 'Они довольны нами',
-            'url': '#home'
+            'url': '#reviews'
+        }, {
+            'label': 'С кем имеем дело',
+            'url': '#our-clients'
+        }, {
+            'label': 'Почитать',
+            'url': '#read'
+        }, {
+            'label': 'Немного истории',
+            'url': '#about'
+        }, {
+            'label': 'Контакты',
+            'url': '#contacts'
         }
     ];
 
 mixin nav(item)
     li.b-sidebar__list-item
-        a.nav-link(href=item.url)=item.label
+        a.js-link.nav-link(href=item.url)=item.label
 .b-sidebar
     .b-sidebar__wrap
         ul.b-sidebar__list.nav.flex-column
-            for menu in menuList
+            //- for menu in menuList
                 +nav(menu)

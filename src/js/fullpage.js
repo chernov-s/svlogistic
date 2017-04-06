@@ -1,7 +1,7 @@
 
 var FullPage = (function($) {
 
-    var fullPage = $('.js-full-page'),
+    var fullPage = $('.b-content'),
         horizontalPage = $('.js-horizontal-page');
 
     var __ = {
@@ -10,22 +10,7 @@ var FullPage = (function($) {
          */
         init: function () {
 
-            /*================================================
-             FULL PAGE
-             https://github.com/alvarotrigo/fullPage.js
-             =================================================*/
-            $('#fullpage').fullpage({
-                anchors:['home', 'service', 'facts'],
-                continuousHorizontal: true,
-                scrollHorizontally: true,
-                easing: 'easeInOutCubic',
-                easingcss3: 'ease',
-                sectionSelector: '.b-pages__item',
-                onLeave: function(index, nextIndex, direction){
-                    console.log(index, nextIndex, direction);
-                },
-            });
-            this.event();
+            //this.event();
         },
 
         event: function () {
@@ -37,11 +22,11 @@ var FullPage = (function($) {
         },
 
         onResize: function () {
-            // var h = window.innerHeight - 20;
-            // for(var i = 0; i < horizontalPage.length; i++) {
-            //     h -= $(horizontalPage[i]).height();
-            // }
-            // fullPage.height(h);
+            var h = window.innerHeight - 20;
+            for(var i = 0; i < horizontalPage.length; i++) {
+                h -= $(horizontalPage[i]).height();
+            }
+            fullPage.height(h);
         }
     };
 
