@@ -39,6 +39,6 @@ mixin nav(item)
         a.js-link.nav-link(href=item.url)=item.label
 .b-sidebar
     .b-sidebar__wrap
-        ul.b-sidebar__list.nav.flex-column
+        ul.b-sidebar__list.nav.flex-column#menu
             //- for menu in menuList
                 +nav(menu)

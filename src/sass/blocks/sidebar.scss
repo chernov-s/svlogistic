@@ -21,10 +21,12 @@
           width: 10px;
           display: none;
         }
-        &.active {
-          &:after, &:before {
-            display: inline-block;
-          }
+      }
+    }
+    .active {
+      a {
+        &:after, &:before {
+          display: inline-block;
         }
       }
     }

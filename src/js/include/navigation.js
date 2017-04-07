@@ -39,7 +39,9 @@ var Navigation = (function($) {
         renderSidebar: function () {
             var html = "";
             items.forEach(function(item) {
-                html += '<li><a href="#' + item.url + '" class="nav-link b-arrow">' + item.name + '</a></li>';
+                html += '<li data-menuanchor="' + item.url + '">'
+                            + '<a href="#' + item.url + '" class="nav-link b-arrow">' + item.name + '</a>'
+                        + '</li>';
             });
 
             $sidebar.html(html);

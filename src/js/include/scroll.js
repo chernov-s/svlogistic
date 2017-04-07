@@ -32,9 +32,12 @@ var Scroll = (function($) {
             $fullPage.fullpage({
                 anchors: Navigation.anchor,
                 sectionSelector: '.b-pages__item',
+                menu: '#menu',
                 onLeave: function(index, nextIndex, direction){
                     ascensorInstance.scrollToFloor(nextIndex - 1);
-                    Navigation.setActiveSidebarItem(nextIndex - 1);
+                },
+                afterLoad: function(anchorLink, index){
+
                 },
             });
 
