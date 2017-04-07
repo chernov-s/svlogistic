@@ -27,7 +27,18 @@
         color: $black-2;
       }
     }
+    &.dark-theme {
+      background-color: #2E3740;
+      color: white;
+      .b-arrow {
+        color: white;
+        &:before, &:after {
+          background-color: white;
+        }
+      }
+    }
   }
+
   .row {
     margin: 0;
   }
