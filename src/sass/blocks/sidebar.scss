@@ -6,15 +6,18 @@
   z-index: 10;
   width: 16%;
   height: 100%;
-  border-right: 2px solid #000;
+  border-right: 2px solid white;
+  background-color: #3F4D67;
   &__wrap {
-    padding: 0 20px;
-    background-color: white;
+    padding: 1em 0;
   }
   &__list {
     li {
       position: relative;
       a {
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.8rem;
         &:after, &:before {
           top: 50%;
           height: 2px;
@@ -25,8 +28,11 @@
     }
     .active {
       a {
+        background-color: #2F3543;
+        box-shadow: 0 1px 8px rgba(0,0,0,.5);
         &:after, &:before {
           display: inline-block;
+          background-color: white;
         }
       }
     }
