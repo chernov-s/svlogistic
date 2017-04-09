@@ -31,7 +31,7 @@
                      =================================================*/
 
                     $('.slick-items').slick({
-                        autoplay: true,
+                        autoplay: false,
                         autoplaySpeed: 10000,
                         dots: true
                     });

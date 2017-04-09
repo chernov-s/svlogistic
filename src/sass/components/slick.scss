@@ -1,6 +1,6 @@
 /* Slider */
 .slick {
-
+  height: 80%;
 }
 .slick-slider {
   position: relative;
@@ -13,12 +13,14 @@
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
-
+.slick-items {
+  height: 100%;
+}
 .slick-list {
   position: relative;
   display: block;
   overflow: hidden;
-  height: 360px;
+  height: 100%;
 }
 .slick-list:focus
 {

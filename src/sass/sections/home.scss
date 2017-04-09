@@ -1,5 +1,26 @@
+.home-page {
+
+}
+.btn-get-cost {
+  $c: #E96122;
+  background-color: $c;
+  border-color: $c;
+  margin-top: -6em;
+  cursor: pointer;
+  z-index: 100;
+}
 .slick {
   ul {
     list-style: square;
+    li {
+      line-height: 2rem;
+    }
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+  &-list {
+    width: 80%;
   }
 }
