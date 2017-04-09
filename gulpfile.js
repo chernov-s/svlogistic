@@ -42,6 +42,7 @@ var paths = {
             vendor + 'jquery.mousewheel.min.js',
             vendor + 'slick.min.js',
             modules + 'fullpage.js/dist/jquery.fullpage.min.js',
+            modules + 'slick-carousel/slick/slick.min.js',
             //modules + 'fullpage.js/dist/jquery.fullpage.extensions.min.js'
         ],
         css: []

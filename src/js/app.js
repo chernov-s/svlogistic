@@ -30,7 +30,11 @@
                      https://github.com/kenwheeler/slick
                      =================================================*/
 
-
+                    $('.slick-items').slick({
+                        autoplay: true,
+                        autoplaySpeed: 10000,
+                        dots: true
+                    });
                 },
 
                 /** @type {function(...*)} */
