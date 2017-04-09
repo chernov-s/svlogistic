@@ -37,6 +37,8 @@
     "gulp-watch": "^4.3.5",
     "jquery.nicescroll": "^3.6.8",
     "rimraf": "^2.4.3",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "scrollreveal": "^3.3.5",
+    "slick-carousel": "^1.6.0"
   }
 }

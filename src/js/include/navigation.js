@@ -22,7 +22,7 @@ var Navigation = (function($) {
          * @param {integer} n - item number in the sitebar
          */
         setActiveSidebarItem: function (n) {
-            var $item = $sidebar.find('.nav-link');
+            var $item = $sidebar.find('li');
             $item.removeClass('active');
             $($item[n]).addClass('active');
         },

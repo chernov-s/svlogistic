@@ -21,16 +21,15 @@
 
             return {
                 init: function () {
-                    // $scroll = $("html").niceScroll({
-                    //     touchbehavior:true,
-                    //     cursorcolor:"#000",
-                    //     cursoropacitymax:0.6,
-                    //     cursorwidth:8,
-                    //     scrollspeed: 20,
-                    // });
                     Navigation.init();
 
                     Scroll.init();
+
+                    /*================================================
+                     SLICK
+                     https://github.com/kenwheeler/slick
+                     =================================================*/
+
 
                 },
 
