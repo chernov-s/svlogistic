@@ -1,14 +1,25 @@
 include _tmpl
+include source/serviceList
+
+mixin serviceChild(item)
+    li
+        a.js-link(href=item.url)=item.label
+
+mixin serviceRender(item)
+    li.services-list__item(data-row=item.row)
+        h1= item.title
+        ul.list.js-child
+            for service in item.child
+                +serviceChild(service)
 
 +tmpl('Наши услуги', 'services')
-    .b-services
-        .row
-            .col-sm-6
-                h1.text-center Логистические услуги
-            .col-sm-6
-                h1.text-center Таможенное оформление под ключ
-        .row
-            .col-sm-6
-                h1.text-center Бизнес с китаем
-            .col-sm-6
-                h1.text-center Экспорт под ключ
+    ul.services-list
+        - var i = 0
+        for item in serviceList
+            if i == 2
+                li.services-list__detail
+            +serviceRender(item)
+            - i = i + 1
+
+        li.services-list__footer
+            a.btn.btn-primary.btn-lg.service-btn-show-all(href='#') Посмотреть все

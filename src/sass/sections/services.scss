@@ -1,0 +1,59 @@
+.services-list {
+  list-style: none;
+  width: 80%;
+  padding: 0;
+  height: 70%;
+
+  &__item {
+    width: 50%;
+    height: 50%;
+    border: 0.5px solid #ccc;
+    float: left;
+    position: relative;
+    cursor:  pointer;
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    &.active {
+      background-color: #ddd;
+    }
+    h1 {
+      text-align: center;
+    }
+    .list {
+      list-style: none;
+      display: none;
+      padding: 0;
+    }
+  }
+  &__detail {
+    width: 100%;
+
+    .list {
+      display: block;
+      float: left;
+      width: 100%;
+      list-style: none;
+      background-color: $dark-1;
+      padding: 1.5em;
+      a {
+        color: white;
+        &:hover {
+          color: $blue-1;
+        }
+      }
+      li {
+        float:left;
+        width: 27%;
+      }
+      li:nth-child(3n+1) {
+        clear:both;
+      }
+    }
+  }
+  &__footer {
+    text-align: center;
+    padding: 1em 0;
+    clear: both;
+  }
+}
