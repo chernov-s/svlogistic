@@ -1,13 +1,16 @@
 @import 'helpers/variables';
+@import 'helpers/sprite';
 
 @import "blocks/header";
 @import "blocks/sidebar";
 @import "blocks/content";
+@import "blocks/footer";
 
 @import "components/pages";
 @import "components/form";
 @import "components/arrow";
 @import "components/slick";
+@import 'components/icons';
 
 @import "sections/home";
 @import "sections/services";

@@ -1,11 +1,23 @@
 .btn {
   border-radius: 0;
+  &-outline-primary, &-primary {
+    color: white;
+    &:hover, &:focus, &:active {
+      color: white;
+    }
+  }
+  &-outline-primary {
+    &:hover, &:focus, &:active {
+      background-color: $dark-1;
+      border-color: $dark-1;
+    }
+  }
 }
 .btn-primary {
   background-color: $orange-2;
   border-color: $orange-2;
   text-transform: uppercase;
-  &:hover, &focus {
+  &:hover, &:focus, &:active {
     background-color: $orange-1;
     border-color: $orange-1;
   }

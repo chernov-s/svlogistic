@@ -4,20 +4,22 @@
   display: block;
   position: fixed;
   z-index: 10;
-  width: 16%;
+  width: $w-sidebar-lg;
   height: 100%;
   border-right: 2px solid white;
-  background-color: #3F4D67;
+  background-color: $dark-2;
   &__wrap {
     padding: 1em 0;
   }
   &__list {
     li {
       position: relative;
+      margin-bottom: .8rem;
       a {
         color: white;
         text-transform: uppercase;
-        font-size: 0.8rem;
+        padding-left: 1.5em;
+        font-size: 1rem;
         &:after, &:before {
           top: 50%;
           height: 2px;
@@ -37,6 +39,31 @@
       }
     }
   }
+
+  &__footer {
+    width: 100%;
+    padding: 0 20px;
+    z-index: 1;
+  }
+
+  &__callback {
+    padding: 0.65rem 0.75rem;
+    border: 1px solid white;
+    text-transform: uppercase;
+    width: 100%;
+    &-icon {
+      @include sprite($question);
+      display: inline-block;
+      position: relative;
+      top: 2px;
+    }
+    &-label {
+      display: inline-block;
+      position: relative;
+      top: -3px;
+    }
+  }
+
   &__item {
 
   }

@@ -16,7 +16,8 @@ var autoprefixer    = require('gulp-autoprefixer'),
     rimraf          = require('rimraf'),
     seq             = require('run-sequence'),
     sass            = require('gulp-sass'),
-    browserSync     = require('browser-sync');
+    browserSync     = require('browser-sync'),
+    spritesmith     = require('gulp.spritesmith');
 
 /* ==========================================================================
  Variables
@@ -33,6 +34,7 @@ var paths = {
     js: 'src/js/**/*.js',
     jsApp: 'src/js/app.js',
     img: 'src/img/*',
+    sprite: 'src/sprite/*.*',
     libs: {
         js: [
             modules + 'jquery/dist/jquery.min.js',
@@ -71,7 +73,7 @@ gulp.task('default', function (cb) {
 });
 
 gulp.task('build', function (cb) {
-    seq('clean', ['html', 'sass', 'fonts', 'js', 'img', 'css:libs', 'js:libs'], cb);
+    seq('clean', ['html', 'sass', 'fonts', 'js', 'img', 'sprite', 'css:libs', 'js:libs'], cb);
 });
 
 gulp.task('watch', ['build'], function () {
@@ -152,6 +154,22 @@ gulp.task('img', function () {
         }))
         .pipe(gulp.dest('dist/assets/img'))
         .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('sprite', function() {
+    var spriteData =
+        gulp.src(paths.sprite) // путь, откуда берем картинки для спрайта
+            .pipe(spritesmith({
+                imgName: 'sprite.png',
+                algorithm: 'top-down',
+                padding: 2,
+                cssName: 'sprite.scss',
+                cssFormat: 'scss',
+                imgPath: '../img/sprite.png',
+            }));
+
+    spriteData.img.pipe(gulp.dest('dist/assets/img/')); // путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest('src/sass/helpers/')); // путь, куда сохраняем стили
 });
 
 /* ==========================================================================

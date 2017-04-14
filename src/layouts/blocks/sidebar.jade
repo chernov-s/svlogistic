@@ -42,3 +42,7 @@ mixin nav(item)
         ul.b-sidebar__list.nav.flex-column#menu
             //- for menu in menuList
                 +nav(menu)
+        .b-sidebar__footer.b-footer-abs
+            a.b-sidebar__callback.btn.btn-outline-primary.btn-lg(role="button", href="#")
+                .b-sidebar__callback-icon
+                .b-sidebar__callback-label Задать вопрос

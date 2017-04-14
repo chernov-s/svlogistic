@@ -24,6 +24,20 @@
       line-height: 2.5rem;
       white-space: nowrap;
     }
+    &__call {
+      padding-top: .65rem;
+      &-icon {
+        @include sprite($phone);
+        display: inline-block;
+        position: relative;
+        top: 5px;
+      }
+      &-label {
+        display: inline-block;
+        position: relative;
+        top: -3px;
+      }
+    }
   }
   //End header inner
 }
