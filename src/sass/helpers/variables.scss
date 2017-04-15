@@ -14,11 +14,54 @@ $dark-2: #3f4e68;
 
 
 $w-sidebar-xs: 100%;
-$w-sidebar-sm: 100%;
-$w-sidebar-md: 275px;
+$w-sidebar-sm: 200px;
+$w-sidebar-md: 235px;
 $w-sidebar-lg: 275px;
+
+$h-header-xs: 90px;
+$h-header-sm: 100px;
+$h-header-md: 110px;
+$h-header-lg: 130px;
 
 $h-xs: 320px;
 $h-sm: 580px;
 $h-md: 700px;
 $h-lg: 900px;
+
+// Extra small screen / phone
+$w-xs: 0;
+// Small screen / phone
+$w-sm: 576px;
+// Medium screen / tablet
+$w-md: 768px;
+// Large screen / desktop
+$w-lg: 992px;
+// Extra large screen / wide desktop
+$w-xl: 1200px;
+
+@mixin screen-w($media) {
+  @if $media == xs {
+    @media only screen and (max-width: $w-xs) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (min-width: $w-sm + 1) and (max-width: $w-md - 1) { @content; }
+  }
+  @else if $media == md {
+    @media only screen and (min-width: $w-md + 1) and (max-width: $w-lg - 1) { @content; }
+  }
+  @else if $media == lg {
+    @media only screen and (min-width: $w-lg) { @content; }
+  }
+}
+
+@mixin screen-h($media) {
+  @if $media == sm {
+    @media only screen and (max-height: $h-sm) { @content; }
+  }
+  @else if $media == md {
+    @media only screen and (min-height: $h-sm + 1) and (max-height: $h-md - 1) { @content; }
+  }
+  @else if $media == lg {
+    @media only screen and (min-height: $h-md) { @content; }
+  }
+}
