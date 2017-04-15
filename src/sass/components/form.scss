@@ -12,6 +12,24 @@
       border-color: $dark-1;
     }
   }
+  &-lg {
+    @include screen-w(sm) {
+      font-size: 1rem;
+      padding: .2rem 0.5rem;
+    }
+    @include screen-w(md) {
+      font-size: 1rem;
+      padding: .4rem 0.8rem;
+    }
+    @include screen-h(sm) {
+      font-size: 1rem;
+      padding: .2rem 0.5rem;
+    }
+    @include screen-h(md) {
+      font-size: 1rem;
+      padding: .4rem 0.8rem;
+    }
+  }
 }
 .btn-primary {
   background-color: $orange-2;

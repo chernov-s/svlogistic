@@ -6,7 +6,6 @@
   // Start header inner
   &-inner {
     padding-top: 30px;
-    padding-bottom: 30px;
     min-height: $h-header-lg;
     box-shadow: 0 5px 5px rgba(0,0,0,0.2);
     &__wrap {
@@ -34,11 +33,35 @@
         display: inline-block;
         position: relative;
         top: 5px;
+        @include screen-w(sm) {
+          top: 0;
+        }
+        @include screen-w(md) {
+          top: 2px;
+        }
+        @include screen-h(sm) {
+          top: 0;
+        }
+        @include screen-h(md) {
+          top: 2px;
+        }
       }
       &-label {
         display: inline-block;
         position: relative;
         top: -3px;
+        @include screen-w(sm) {
+          top: -3px;
+        }
+        @include screen-w(md) {
+          top: -7px;
+        }
+        @include screen-h(sm) {
+          top: -3px;
+        }
+        @include screen-h(md) {
+          top: -7px;
+        }
       }
     }
 
@@ -55,22 +78,18 @@
     //Media query
     @include screen-h(sm) {
       padding-top: 10px;
-      padding-bottom: 10px;
       min-height: $h-header-sm;
     }
     @include screen-h(md) {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 20px;
       min-height: $h-header-md;
     }
     @include screen-w(sm) {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 20px;
       min-height: $h-header-sm;
     }
     @include screen-w(md) {
       padding-top: 10px;
-      padding-bottom: 10px;
       min-height: $h-header-md;
     }
     //End media query
