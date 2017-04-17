@@ -24,10 +24,10 @@ html {
     font-size: 100%;
   }
   @include screen-h(lg) {
-    font-size: 110%;
+    font-size: 120%;
   }
   @include screen-h(xl) {
-    font-size: 120%;
+    font-size: 140%;
   }
 }
 
