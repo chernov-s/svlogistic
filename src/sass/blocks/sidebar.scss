@@ -3,9 +3,9 @@
   width: $w-sidebar-lg;
   height: 100%;
   border-right: 2px solid white;
-  background-color: $dark-2;
   background: url("../img/bgsitebar.jpg") repeat $dark-2 ;
   float: left;
+  transition: transform .2s,-webkit-transform .2s;
   &__wrap {
     padding: 1em 0;
     position: absolute;
@@ -13,13 +13,14 @@
     width: $w-sidebar-lg - 2;
   }
   &__list {
-    li {
+    & > li {
       position: relative;
-      margin-bottom: .8rem;
-      a {
+      margin-bottom: .6rem;
+      & > a {
         color: white;
         text-transform: uppercase;
         font-size: 1rem;
+        position: relative;
         &:after, &:before {
           top: 50%;
           height: 2px;
@@ -27,12 +28,28 @@
           display: none;
         }
       }
+      & > ul {
+        list-style: none;
+
+        li {
+          margin: .4rem 0;
+          a {
+            text-transform: uppercase;
+            color: $blue-1;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
       @include screen-h(md) {
         margin-bottom: 0;
       }
     }
     .active {
-      a {
+      & > a {
         background-color: #2F3543;
         box-shadow: 0 2px 4px rgba(0,0,0,.6);
         &:after, &:before {
@@ -49,24 +66,31 @@
   }
 
   &__callback {
-    padding: 0.65rem 0.75rem;
     border: 1px solid white;
     text-transform: uppercase;
     width: $w-sidebar-lg - 20 * 2;
     &-icon {
       @include sprite($question);
-      display: inline-block;
+      display: inline-table;
       position: relative;
-      top: 2px;
+      margin-left: -0.5em;
+      top: 0.18em;
     }
     &-label {
-      display: inline-block;
-      position: relative;
-      top: -3px;
+
     }
   }
 
   &__item {
 
   }
+
+  //Media query
+  @include screen-w(xs) {
+    transform: translateX(-100%);
+  }
+  @include screen-w(sm) {
+    transform: translateX(-100%);
+  }
+  //End media query
 }

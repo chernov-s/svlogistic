@@ -4,7 +4,7 @@ var Navigation = (function($) {
 
     const BTN_NEXT_PAGE = 'b-pages__item-next';
 
-    var $pages = $('.b-pages__item'),
+    var $pages = $('.b-pages__item'), // Get page data
         $sidebar = $('.b-sidebar__list');
 
     var __ = {
@@ -19,7 +19,7 @@ var Navigation = (function($) {
         },
         /*
          * @access public
-         * @param {integer} n - item number in the sitebar
+         * @param {integer} n - item number in the sidebar
          */
         setActiveSidebarItem: function (n) {
             var $item = $sidebar.find('li');
@@ -29,18 +29,30 @@ var Navigation = (function($) {
 
         setItems: function () {
             $pages.each(function (i, e) {
+                var el = $(e);
                 items.push({
-                    url: $(e).data("anchor") || 'home',
-                    name: $(e).data("item") || 'Главная'
+                    url: el.data("anchor") || 'home',
+                    name: el.data("item") || 'Главная',
+                    list: el.data("list") || null
                 });
             });
         },
 
         renderSidebar: function () {
-            var html = "";
+            var html = "", i = 0;
             items.forEach(function(item) {
+                var childList = "";
+                if(item.list[0].label !== undefined) {
+                    //Parse JSON data from child element in $pages
+                    childList += '<ul>';
+                    for(i = 0; i < item.list.length; i++) {
+                        childList += '<li><a href="'+ item.list[0].url +'">'+ item.list[0].label +'</a></li>';
+                    }
+                    childList += '</ul>';
+                }
                 html += '<li data-menuanchor="' + item.url + '">'
                             + '<a href="#' + item.url + '" class="nav-link b-arrow">' + item.name + '</a>'
+                            + childList
                         + '</li>';
             });
 

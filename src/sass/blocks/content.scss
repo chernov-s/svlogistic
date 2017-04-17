@@ -1,4 +1,13 @@
 .b-content {
   height: 100%;
   margin-left: $w-sidebar-lg;
+
+  //Media query
+  @include screen-w(xs) {
+    margin-left: 0;
+  }
+  @include screen-w(sm) {
+    margin-left: 0;
+  }
+  //End media query
 }

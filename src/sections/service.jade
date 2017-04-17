@@ -12,7 +12,7 @@ mixin serviceRender(item)
             for service in item.child
                 +serviceChild(service)
 
-+tmpl('Наши услуги', 'services')
++tmpl('Наши услуги', 'services', '', '[{"label":"Посмотреть все","url":"#"}]')
     ul.services-list
         - var i = 0
         for item in serviceList

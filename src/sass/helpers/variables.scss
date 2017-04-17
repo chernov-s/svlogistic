@@ -41,7 +41,7 @@ $w-xl: 1200px;
 
 @mixin screen-w($media) {
   @if $media == xs {
-    @media only screen and (max-width: $w-xs) { @content; }
+    @media only screen and (max-width: $w-sm) { @content; }
   }
   @else if $media == sm {
     @media only screen and (min-width: $w-sm + 1) and (max-width: $w-md - 1) { @content; }
