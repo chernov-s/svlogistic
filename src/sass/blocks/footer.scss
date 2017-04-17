@@ -1,10 +1,4 @@
 .b-footer-abs {
   position: absolute;
-  bottom: 180px;
-  @include screen-h(sm) {
-    bottom: 120px;
-  }
-  @include screen-h(md) {
-    bottom: 140px;
-  }
+  bottom: 10em;
 }

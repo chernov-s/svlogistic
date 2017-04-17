@@ -10,6 +10,9 @@
   padding: .8rem .75rem;
 }
 .slick {
+  &-list {
+    width: 80%;
+  }
   ul {
     list-style: square;
     li {
@@ -19,8 +22,5 @@
   h1 {
     font-size: 3rem;
     margin-bottom: 4rem;
-  }
-  &-list {
-    width: 80%;
   }
 }

@@ -25,7 +25,7 @@ $h-header-lg: 130px;
 
 $h-xs: 320px;
 $h-sm: 580px;
-$h-md: 700px;
+$h-md: 768px;
 $h-lg: 900px;
 
 // Extra small screen / phone
@@ -63,5 +63,8 @@ $w-xl: 1200px;
   }
   @else if $media == lg {
     @media only screen and (min-height: $h-md) { @content; }
+  }
+  @else if $media == xl {
+    @media only screen and (min-height: $h-lg) { @content; }
   }
 }

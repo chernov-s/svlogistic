@@ -15,6 +15,22 @@
 @import "sections/home";
 @import "sections/services";
 
+html {
+  font-family: Tahoma, sans-serif;
+  @include screen-h(sm) {
+    font-size: 80%;
+  }
+  @include screen-h(md) {
+    font-size: 100%;
+  }
+  @include screen-h(lg) {
+    font-size: 110%;
+  }
+  @include screen-h(xl) {
+    font-size: 120%;
+  }
+}
+
 .b-main {
   height: 100%;
   margin-top: $h-header-lg;

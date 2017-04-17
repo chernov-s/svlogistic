@@ -27,20 +27,8 @@
           display: none;
         }
       }
-      @include screen-h(sm) {
-        margin-bottom: 0;
-        a {
-          font-size: 0.8rem;
-        }
-      }
       @include screen-h(md) {
         margin-bottom: 0;
-        a {
-          font-size: 0.9rem;
-        }
-      }
-      @include screen-h(lg) {
-        margin-bottom: .8rem;
       }
     }
     .active {
