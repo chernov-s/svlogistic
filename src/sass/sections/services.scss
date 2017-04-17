@@ -4,38 +4,93 @@
   padding: 0;
   height: 70%;
 
+  &.active {
+    & > li {
+      background-color: $gray-1;
+    }
+    & > li.active {
+      background-color: white;
+    }
+  }
+
+  // Begin item
   &__item {
     width: 50%;
     height: 50%;
     border: 0.5px solid #ccc;
+    padding: 0.5em;
     float: left;
     position: relative;
     cursor:  pointer;
+    text-align: center;
     &:hover {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
-    &.active {
-      background-color: #ddd;
+    .title {
+      position: absolute;
+      bottom: 0.5rem;
+      width: 97%;
+      h4 {
+        font-size: 2rem;
+      }
     }
-    h1 {
-      text-align: center;
+    img {
+      width: 60%;
     }
     .list {
       list-style: none;
       display: none;
       padding: 0;
     }
-  }
-  &__detail {
-    width: 100%;
 
+    .icon {
+      position: absolute;
+      right: 1rem;
+      top:  1rem;
+    }
+
+    // Begin small item
+    &.small {
+      height: 25%;
+      display: table;
+      background-color: $gray-1;
+      .icon {
+        position: absolute;
+        left: 1rem;
+      }
+      .title {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        margin-left: 5em;
+        padding-top: 1em;
+        width: 80%;
+        overflow: hidden;
+        h4 {
+          text-align: left;
+          font-size: 1.5rem;
+        }
+      }
+      img {
+        display: none;
+      }
+    }
+    // End small item
+
+  }
+  // End item
+
+
+
+  &__detail {
+    display: none;
+    float: left;
+    width: 100%;
+    height: 25%;
+    background-color: $dark-1 !important;
     .list {
-      display: block;
-      float: left;
-      width: 100%;
       list-style: none;
-      background-color: $dark-1;
-      padding: 1.5em;
+      column-count: 3;
       a {
         color: white;
         &:hover {
@@ -43,11 +98,7 @@
         }
       }
       li {
-        float:left;
-        width: 27%;
-      }
-      li:nth-child(3n+1) {
-        clear:both;
+
       }
     }
   }
@@ -55,5 +106,6 @@
     text-align: center;
     padding: 1em 0;
     clear: both;
+    background-color: transparent !important;
   }
 }

@@ -1,0 +1,14 @@
+.icon {
+  &-man {
+    @include sprite($icon-man);
+  }
+  &-ship {
+    @include sprite($icon-ship);
+  }
+  &-mask {
+    @include sprite($icon-mask);
+  }
+  &-train {
+    @include sprite($icon-train);
+  }
+}

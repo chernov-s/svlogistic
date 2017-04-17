@@ -7,7 +7,10 @@ mixin serviceChild(item)
 
 mixin serviceRender(item)
     li.services-list__item(data-row=item.row)
-        h1= item.title
+        i.icon(class=item.icon)
+        img(src=item.img)
+        .title
+            h4= item.title
         ul.list.js-child
             for service in item.child
                 +serviceChild(service)
