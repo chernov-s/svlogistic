@@ -11,4 +11,21 @@
   &-train {
     @include sprite($icon-train);
   }
+
+  //Facts
+  &-decl {
+    @include sprite($icon-decl);
+  }
+  &-human {
+    @include sprite($icon-human);
+  }
+  &-maps {
+    @include sprite($icon-maps);
+  }
+  &-car {
+    @include sprite($icon-car);
+  }
+  &-container {
+    @include sprite($icon-container);
+  }
 }

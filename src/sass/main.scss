@@ -1,5 +1,6 @@
 @import 'helpers/variables';
 @import 'helpers/sprite';
+@import 'helpers/global';
 
 @import "blocks/header";
 @import "blocks/sidebar";
@@ -14,6 +15,7 @@
 
 @import "sections/home";
 @import "sections/services";
+@import "sections/facts";
 
 html {
   font-family: Tahoma, sans-serif;
@@ -34,6 +36,10 @@ html {
 .b-main {
   height: 100%;
   margin-top: $h-header-lg;
+
+  &-container {
+    width: 80%;
+  }
   
   @include screen-h(sm) {
     margin-top: $h-header-sm;

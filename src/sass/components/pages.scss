@@ -45,6 +45,10 @@
 }
 
 .b-page-wrap {
-  padding: 20px;
+  padding: 1em;
   height: 100%;
+  overflow: hidden;
+  &-fill {
+    margin: -1em;
+  }
 }

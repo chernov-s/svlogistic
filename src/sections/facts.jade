@@ -1,4 +1,26 @@
 include _tmpl
+include source/factList
 
-+tmpl('Факты о нас', 'facts')
-    h1 Факты о нас
+mixin factRender(item)
+    .fact-list__item(class=item.htmlClass)
+        i.fact-list__item-icon(class=item.icon)
+        hr
+        .fact-list__item-content
+            h3= item.fact
+            p= item.desc
+
++tmpl('Факты о нас', 'facts', 'g-overflow-hidden')
+    .fact-inner.b-page-wrap-fill
+        .fact-inner__train
+            img(src="assets/img/train.png")
+        .fact-inner__hello
+            img(src="assets/img/cloud.png")
+            p.fact-inner__hello-text(style='white-space:pre;')
+                | Прежде всего, мы нацелены
+                | на выстраивание партнерских
+                | отношений.
+    .b-main-container
+        .fact-list.row
+            for item in factList
+                +factRender(item)
+        p.fact-updated * Данные предоставленны на 09.05.2017
