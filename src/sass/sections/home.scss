@@ -8,18 +8,20 @@
 .btn-get-cost {
   cursor: pointer;
 }
-.slick {
-  &-list {
-    width: 70%;
-  }
-  ul {
-    list-style: square;
-    li {
-      line-height: 2rem;
+.home-page {
+  .slick {
+    &-list {
+      width: 70%;
     }
-  }
-  h1 {
-    font-size: 3em;
-    margin-bottom: 4rem;
+    ul {
+      list-style: square;
+      li {
+        line-height: 2rem;
+      }
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 4rem;
+    }
   }
 }

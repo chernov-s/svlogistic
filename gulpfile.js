@@ -33,7 +33,7 @@ var paths = {
     fonts: 'src/fonts/*',
     js: 'src/js/**/*.js',
     jsApp: 'src/js/app.js',
-    img: 'src/img/*',
+    img: 'src/img/**/*',
     sprite: 'src/sprite/*.*',
     libs: {
         js: [

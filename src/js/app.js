@@ -35,6 +35,13 @@
                         autoplaySpeed: 10000,
                         dots: true
                     });
+
+                    $('.js-review').slick({
+                        autoplay: false,
+                        autoplaySpeed: 10000,
+                        dots: true
+                    });
+
                 },
 
                 /** @type {function(...*)} */
