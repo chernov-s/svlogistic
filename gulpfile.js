@@ -161,7 +161,6 @@ gulp.task('sprite', function() {
         gulp.src(paths.sprite) // путь, откуда берем картинки для спрайта
             .pipe(spritesmith({
                 imgName: 'sprite.png',
-                algorithm: 'top-down',
                 padding: 2,
                 cssName: 'sprite.scss',
                 cssFormat: 'scss',

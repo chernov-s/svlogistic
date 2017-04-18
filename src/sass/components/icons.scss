@@ -28,4 +28,18 @@
   &-container {
     @include sprite($icon-container);
   }
+
+  //Schema
+  &-calc {
+    @include sprite($icon-calc);
+  }
+  &-contract {
+    @include sprite($icon-contract);
+  }
+  &-mark {
+    @include sprite($icon-mark);
+  }
+  &-delivery {
+    @include sprite($icon-delivery);
+  }
 }

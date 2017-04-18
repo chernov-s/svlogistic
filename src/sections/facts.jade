@@ -3,7 +3,7 @@ include source/factList
 
 mixin factRender(item)
     .fact-list__item(class=item.htmlClass)
-        i.fact-list__item-icon(class=item.icon)
+        i.fact-list__item-icon.icon(class=item.icon)
         hr
         .fact-list__item-content
             h3= item.fact

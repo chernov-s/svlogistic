@@ -1,0 +1,22 @@
+include _tmpl
+include source/schemaList
+
+mixin schemaRender(item, number)
+    .schema-list__item(class=item.htmlClass)
+        .schema-list__item-wrap
+            span.number= number
+            .thumbnail
+                i.icon(class=item.icon)
+            .content
+                p= item.title
+
++tmpl('Схема работы', 'schema')
+    .b-main-container.schema
+        .row.schema-list
+            - var i = 0
+            for item in schemaList
+                - i = i + 1
+                +schemaRender(item, i)
+
+        .row
+            .offset-sm-2.col-sm-8.schema-result Вы получаете ваш груз и полный комплект закрывающих документов

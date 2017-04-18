@@ -1,3 +1,42 @@
+html {
+  font-family: Tahoma, sans-serif;
+  @include screen-h(sm) {
+    font-size: 80%;
+  }
+  @include screen-h(md) {
+    font-size: 100%;
+  }
+  @include screen-h(lg) {
+    font-size: 120%;
+  }
+  @include screen-h(xl) {
+    font-size: 140%;
+  }
+}
+
+.b-main {
+  height: 100%;
+  margin-top: $h-header-lg;
+
+  &-container {
+    width: 80%;
+  }
+
+  @include screen-h(sm) {
+    margin-top: $h-header-sm;
+  }
+  @include screen-h(md) {
+    margin-top: $h-header-md;
+  }
+
+  @include screen-w(sm) {
+    margin-top: $h-header-sm;
+  }
+  @include screen-w(md) {
+    margin-top: $h-header-md;
+  }
+}
+
 .g-overflow-hidden {
   overflow: hidden !important;
 }
