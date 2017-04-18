@@ -59,7 +59,7 @@
         }
       }
     }
-  }
+  } //End list
 
   &__footer {
     padding: 0 20px;
@@ -67,6 +67,8 @@
   }
 
   &__callback {
+    padding-right: 1rem;
+    padding-left: 1rem;
     border: 1px solid white;
     text-transform: uppercase;
     width: $w-sidebar-lg - 20 * 2;
