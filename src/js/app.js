@@ -39,7 +39,11 @@
                     $('.js-review').slick({
                         autoplay: false,
                         autoplaySpeed: 10000,
-                        dots: true
+                        dots: true,
+                        customPaging : function(slider, i) {
+                            //var thumb = $(slider.$slides[i]).data();
+                            return '<a>' + (i+1) + '</a>';
+                        }
                     });
 
                 },
