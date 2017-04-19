@@ -1,4 +1,17 @@
 include _tmpl
+include source/aboutList
 
-+tmpl('Немного истории', 'about')
-    h1 Немного истории
+mixin aboutRender(item)
+    .about__item(data-year=item.year)
+        h4= item.title
+        hr
+        each option in item.description
+            p= option
+
++tmpl('Немного истории', 'about', 'dark-theme')
+    .b-main-container
+        h1 Немного истории
+
+        .about.b-slick-arrow.js-slick-about
+            for item in aboutList
+                +aboutRender(item)

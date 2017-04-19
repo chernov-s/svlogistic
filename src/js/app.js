@@ -53,6 +53,16 @@
                         slidesToShow: 2,
                         slidesToScroll: 1
                     });
+
+                    $('.js-slick-about').slick({
+                        autoplay: false,
+                        autoplaySpeed: 10000,
+                        dots: true,
+                        customPaging : function(slider, i) {
+                            var _date = $(slider.$slides[i]).data("year");
+                            return '<button>' + _date + '</button>';
+                        }
+                    });
                 },
 
                 /** @type {function(...*)} */
