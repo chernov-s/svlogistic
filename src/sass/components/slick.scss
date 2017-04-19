@@ -1,3 +1,60 @@
+//Slick slider for reviews and auto-park section
+.b-slick-arrow {
+  .slick {
+    &-arrow {
+      z-index: 3;
+      font-size: 1rem;
+      height: 3em;
+      background-color: transparent;
+      top: 40%;
+      margin: 0;
+      &:active, &:focus, &:hover {
+        outline: none;
+        &:before, &:after {
+          background-color: $black-1;
+        }
+      }
+      &:before, &:after {
+        background-color: $black-2;
+        right: 0;
+        left: 0;
+        content: '';
+        margin: 0;
+        display: inline-block;
+        height: .1em;
+        width: 2em;
+        position: absolute;
+
+      }
+      &.slick-next {
+        right: 0;
+        &:before {
+          transform: rotate(-45deg);
+          transform-origin: 100%;
+        }
+        &:after {
+          transform: rotate(45deg);
+          transform-origin: 100%;
+        }
+      }
+      &.slick-prev {
+        left: 0;
+        width: 2em;
+        &:before {
+          transform: rotate(-45deg);
+          transform-origin: 0 100%;
+        }
+        &:after {
+          transform: rotate(45deg);
+          transform-origin: 0 100%;
+        }
+      }
+    }
+    //End  slick-arrow
+  }
+}
+
+
 /* Slider */
 .slick {
   height: 100%;
@@ -106,43 +163,14 @@
   outline: none;
 }
 
-/* Dots */
-.slick-dots
-{
+.slick-dots {
   position: absolute;
-  bottom: 8em;
-  padding: 0;
-  width: 100%;
-  text-align: center;
+  list-style: none;
   li {
     font-size: 0;
     position: relative;
     display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin: 0 5px;
     padding: 0;
     cursor: pointer;
-    button {
-      display: block;
-      width: 15px;
-      height: 15px;
-      border-radius: 8px;
-      outline: 0;
-      padding: 5px;
-      cursor: pointer;
-      border: 1px solid white;
-      background: transparent;
-      &:hover, &:focus {
-        border: 1px solid white;
-      }
-
-    }
-    &.slick-active {
-      button {
-        background: white;
-        border: 1px solid white;
-      }
-    }
   }
 }

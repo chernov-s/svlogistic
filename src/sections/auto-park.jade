@@ -1,4 +1,27 @@
 include _tmpl
+include source/autoList
+
+mixin autoRender(item)
+    .card
+        .card-thumbnail
+            img.card-img-top(src=item.img)
+        .card-block
+            h4.card-title= item.brand
+            p.card-text
+                each option in item.options
+                    span= option
+            p.text-center
+                a.btn.btn-outline-warning.btn-lg(href="#") Посмотреть
+
+
+
 
 +tmpl('Автопарк', 'auto-park')
-    h1 Собственный парк тягочей
+    .b-main-container.b-slick-arrow
+        h1 Собственный парк тягочей
+        p Перевезём сверх габаритные грузы собственными тягачами со специализированными тралами
+        .js-auto-park.auto-park
+            for item in autoList
+                +autoRender(item)
+
+

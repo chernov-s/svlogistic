@@ -1,0 +1,36 @@
+.auto-park {
+  padding-left: 1em;
+  padding-right: 1em;
+  .card {
+    border: none;
+    border-radius: 0;
+    border-right: 0.1em solid $dark-1;
+    &-thumbnail {
+      text-align: center;
+      img {
+        max-height: 10em;
+      }
+    }
+  } //End card
+  .slick-dots {
+    text-align: center;
+    width: 100%;
+    margin-top: 2em;
+    li {
+      font-size: 1rem;
+      margin-right: 0.5em;
+      button {
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        color: #c2b59b;
+      }
+      &.slick-active {
+        button {
+          color: $black-1;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
