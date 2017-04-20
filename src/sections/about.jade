@@ -2,13 +2,13 @@ include _tmpl
 include source/aboutList
 
 mixin aboutRender(item)
-    .about__item(data-year=item.year)
+    .about__item(data-year=item.year, data-bg=item.bg)
         h4= item.title
         hr
         each option in item.description
             p= option
 
-+tmpl('Немного истории', 'about', 'dark-theme')
++tmpl('Немного истории', 'about', 'dark-theme js-bg-about about-bg about-bg-2005')
     .b-main-container
         h1 Немного истории
 

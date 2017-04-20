@@ -58,11 +58,22 @@
                         autoplay: false,
                         autoplaySpeed: 10000,
                         dots: true,
+                        infinite: true,
+                        fade: true,
+                        cssEase: 'cubic-bezier(0.18, 0.89, 0.32, 1.28)',
                         customPaging : function(slider, i) {
+                            //Change default dots
                             var _date = $(slider.$slides[i]).data("year");
                             return '<button>' + _date + '</button>';
                         }
-                    });
+                    })
+                        .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                            //Change background
+                            var _bgNext = $(slick.$slides[nextSlide]).data("bg"),
+                                _bgCur = $(slick.$slides[currentSlide]).data("bg");
+                            $('.js-bg-about').removeClass(_bgCur).addClass(_bgNext);
+                        });
+
                 },
 
                 /** @type {function(...*)} */

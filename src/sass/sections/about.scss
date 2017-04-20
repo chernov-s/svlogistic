@@ -8,6 +8,29 @@
     }
   }
 
+  .slick-arrow {
+    &:before, &:after {
+      background-color: $gray-2;
+    }
+    &:hover {
+      &:before, &:after {
+        background-color: white;
+      }
+    }
+    &.slick-disabled {
+
+      &:before, &:after {
+        background-color: transparent !important;
+      }
+      &:hover {
+        cursor: default;
+        &:before, &:after {
+          background-color: transparent !important;
+        }
+      }
+    }
+  } //End slick-arrow
+
   .slick-dots {
     width: 100%;
     top: -4em;
@@ -65,4 +88,32 @@
       }
     }
   } //End dots
+
+  &-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.2s ease-in-out;
+    box-shadow: inset 0 0 200px 1000px rgba(0,0,0, 0.8);
+    &-2005 {
+      background-image: url("../img/about/2005.png");
+    }
+    &-2007 {
+      background-image: url("../img/about/2007.png");
+    }
+    &-2008 {
+      background-image: url("../img/about/2008.png");
+    }
+    &-2009 {
+      background-image: url("../img/about/2009.png");
+    }
+    &-2010 {
+      background-image: url("../img/about/2010.png");
+    }
+    &-current {
+      background-image: url("../img/about/current.png");
+    }
+  }
+
 }
+
