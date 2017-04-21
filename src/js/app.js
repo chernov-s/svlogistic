@@ -54,6 +54,7 @@
                         slidesToScroll: 1
                     });
 
+
                     $('.js-slick-about').slick({
                         autoplay: false,
                         autoplaySpeed: 10000,
@@ -72,6 +73,14 @@
                             var _bgNext = $(slick.$slides[nextSlide]).data("bg"),
                                 _bgCur = $(slick.$slides[currentSlide]).data("bg");
                             $('.js-bg-about').removeClass(_bgCur).addClass(_bgNext);
+
+                            //Add a class to the elements that stand before the active element
+                            var $dotsAbout = $('.js-slick-about ul.slick-dots > li');
+                            $dotsAbout.removeClass('complete');
+                            for(var i = 0; i < nextSlide; i++) {
+                                //$dotsAbout[i].addClass('complete');
+                            }
+
                         });
 
                 },
