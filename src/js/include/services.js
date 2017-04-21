@@ -15,7 +15,7 @@
 
     var active = 'active';
 
-    var Services = {
+    var Tabs = {
         /**
          * @access public
          */
@@ -78,6 +78,6 @@
         }
     };
 
-    Services.init();
+    Tabs.init();
 
 })($);

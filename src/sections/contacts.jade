@@ -1,4 +1,92 @@
 include _tmpl
 
 +tmpl('Контакты', 'contacts')
-    h1 Контакты
+    .b-page-wrap-fill
+        #map
+        .contact
+            ul.nav.nav-tabs.js-tabs(role="tablist")
+                li.nav-item
+                    button.nav-link.active(data-toggle="tab", data-to="contact-tab1", role="tab")
+                        | Центральный офис в п. Восточном
+                li.nav-item
+                    button.nav-link(data-toggle="tab", data-to="contact-tab2", role="tab")
+                        | Представительство в г. Екатеринбург
+                li.nav-item
+                    button.nav-link(data-toggle="tab", data-to="contact-tab3", role="tab")
+                        | Мобильный представитель в Гуанчжоу
+                li.nav-item
+                    button.nav-link(data-toggle="tab", data-to="contact-tab4", role="tab")
+                        | Представительство в г. Москва
+                li.nav-item
+                    button.nav-link(data-toggle="tab", data-to="contact-tab5", role="tab")
+                        | Представительство в КНР
+                li.nav-item
+                    button.nav-link(data-toggle="tab", data-to="contact-tab6", role="tab")
+                        | Складской комплекс
+
+            .tab-content
+                .tab-pane.active#contact-tab1(role="tabpanel")
+                    p
+                        b Адрес:
+                        |  Россия, 692941, Приморский край, г. Находка, пос. Врангель, ул. Внутрипортовая 5
+                        br
+                        b Телефон/Факс:
+                        |  +7 (4236) 750-123, +7 (4236) 628-884
+                        br
+                        b Электронная почта:
+                        |  vost@sv-log.ru
+
+                .tab-pane#contact-tab2(role="tabpanel")
+                    p
+                        b Адрес:
+                        |  г. Екатеринбург
+                        br
+                        b Телефон/Факс:
+                        |  +7 (4236) 750-123, +7 (4236) 628-884
+                        br
+                        b Электронная почта:
+                        |  vost@sv-log.ru
+
+                .tab-pane#contact-tab3(role="tabpanel")
+                    p
+                        b Адрес:
+                        |  в Гуанчжоу
+                        br
+                        b Телефон/Факс:
+                        |  +7 (4236) 750-123, +7 (4236) 628-884
+                        br
+                        b Электронная почта:
+                        |  vost@sv-log.ru
+
+                .tab-pane#contact-tab4(role="tabpanel")
+                    p
+                        b Адрес:
+                        |  г. Москва
+                        br
+                        b Телефон/Факс:
+                        |  +7 (4236) 750-123, +7 (4236) 628-884
+                        br
+                        b Электронная почта:
+                        |  vost@sv-log.ru
+
+                .tab-pane#contact-tab5(role="tabpanel")
+                    p
+                        b Адрес:
+                        |  КНР
+                        br
+                        b Телефон/Факс:
+                        |  +7 (4236) 750-123, +7 (4236) 628-884
+                        br
+                        b Электронная почта:
+                        |  vost@sv-log.ru
+
+                .tab-pane#contact-tab6(role="tabpanel")
+                    p
+                        b Адрес:
+                        |  Складской комплекс
+                        br
+                        b Телефон/Факс:
+                        |  +7 (4236) 750-123, +7 (4236) 628-884
+                        br
+                        b Электронная почта:
+                        |  vost@sv-log.ru
