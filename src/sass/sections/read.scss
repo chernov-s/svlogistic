@@ -1,0 +1,31 @@
+.events {
+  margin-bottom: 1em;
+  h1 {
+    text-indent: .3em;
+    margin-bottom: .3em;
+  }
+  &__item {
+    &-date {
+      font-size: 0.9rem;
+    }
+    &-date, &-title {
+      margin: 0.5em 0;
+      display: block;
+    }
+    &-link {
+      color: $black-1;
+      font-weight: bold;
+
+      img {
+        width: 100%;
+        max-height: 9em;
+      }
+    }
+
+  }
+  &__more-link-container {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+}

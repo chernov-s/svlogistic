@@ -1,4 +1,27 @@
 include _tmpl
+include source/readList
 
 +tmpl('Почитать', 'read')
-    h1 Почитать
+    .b-main-container
+        .events
+            h1 Интересные события
+            .row
+                for item in eventList
+                    .col-sm-3.events__item
+                        span.events__item-date= item.date
+                        a.events__item-link(href= item.url)
+                            img(src= item.img)
+                            span.events__item-title= item.title
+                .col-sm-3.events__more-link-container
+                    a.events__more-link(href='#') Ещё &gt;
+
+        .events
+            h1 Полезно знать
+            .row
+                for item in goodList
+                    .col-sm-3.events__item
+                        a.events__item-link(href= item.url)
+                            img(src= item.img)
+                            span.events__item-title= item.title
+                .col-sm-3.events__more-link-container
+                    a.events__more-link(href='#') Ещё &gt;
