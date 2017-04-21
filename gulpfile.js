@@ -138,7 +138,7 @@ gulp.task('js', function () {
         .pipe(include())
         .on('error', console.log)
         //.pipe(concat('app.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(rename('app.js'))
         .pipe(gulp.dest('dist/assets/js/'))
         .pipe(browserSync.reload({stream: true}));

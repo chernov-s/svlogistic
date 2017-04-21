@@ -11,6 +11,21 @@
         max-height: 10em;
       }
     }
+    &-title {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .btn {
+      border-color: $orange-3;
+      color: $black-1;
+      text-transform: uppercase;
+      &:focus, &:hover, &:active {
+        background-color: $orange-3;
+        color: white;
+      }
+    }
+
   } //End card
   .slick-dots {
     text-align: center;
