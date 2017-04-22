@@ -75,12 +75,14 @@
                             $('.js-bg-about').removeClass(_bgCur).addClass(_bgNext);
 
                             //Add a class to the elements that stand before the active element
+                            //TODO: Вроде работает, но нужно улучшить этот кусок:)
                             var $dotsAbout = $('.js-slick-about ul.slick-dots > li');
                             $dotsAbout.removeClass('complete');
-                            for(var i = 0; i < nextSlide; i++) {
-                                //$dotsAbout[i].addClass('complete');
-                            }
-
+                            $dotsAbout.each(function (index, el) {
+                                if(index <= nextSlide) {
+                                    $(el).addClass('complete');
+                                }
+                            });
                         });
 
                 },

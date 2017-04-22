@@ -35,6 +35,7 @@
     width: 100%;
     top: -4em;
     border-bottom: 0.1em solid white;
+    padding: 0;
     li {
       position: relative;
       font-size: 1rem;
@@ -63,6 +64,23 @@
           bottom: -1.2em;
           border-radius: (1em / 2);
           background-color: white;
+        }
+      }
+
+      &.complete, &:first-child {
+        &:after {
+          content: '';
+          border-top: 2px solid $orange-1;
+          position: absolute;
+          transition: all 200ms ease-in;
+          width: 8em;
+          top: 0.4em;
+          left: 0;
+        }
+        button {
+          &:after {
+            background-color: $orange-1;
+          }
         }
       }
 
