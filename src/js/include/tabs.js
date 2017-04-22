@@ -1,12 +1,11 @@
 (function ($) {
 
-    var tabs = 'js-tabs';
+    const tabs = 'js-tabs',
+        active = 'active';
 
     var $tabs = $('.' + tabs),
         $navTab = $tabs.find('button'),
         $content = $('.contact .tab-pane');
-
-    var active = 'active';
 
     var Services = {
         /**

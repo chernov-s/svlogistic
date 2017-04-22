@@ -32,9 +32,10 @@
   } //End slick-arrow
 
   .slick-dots {
+    $border-width: 0.15em;
     width: 100%;
     top: -4em;
-    border-bottom: 0.1em solid white;
+    border-bottom: $border-width solid white;
     padding: 0;
     li {
       position: relative;
@@ -58,10 +59,10 @@
         &:after {
           content: '';
           position: absolute;
-          width: .5em;
-          height: .5em;
-          right: 43%;
-          bottom: -1.2em;
+          width: .6em;
+          height: .6em;
+          right: 41%;
+          bottom: -1.25em;
           border-radius: (1em / 2);
           background-color: white;
         }
@@ -70,11 +71,11 @@
       &.complete, &:first-child {
         &:after {
           content: '';
-          border-top: 2px solid $orange-1;
+          border-top: $border-width solid $orange-1;
           position: absolute;
           transition: all 200ms ease-in;
           width: 8em;
-          top: 0.4em;
+          top: 0.36em;
           left: 0;
         }
         button {
@@ -92,10 +93,10 @@
           width: 4em;
           height: 4em;
           border-radius: 2em;
-          border: 1px solid $orange-1;
+          border: $border-width solid $orange-1;
           background-color: white;
           &:after {
-            bottom: -1.75em;
+            bottom: -1.9em;
             background-color: $orange-1;
           }
         }
@@ -103,9 +104,9 @@
           content: '';
           position: absolute;
           height: 2em;
-          width: 0.1em;
-          background-color: $orange-1;
-          right: 0.21em;
+          width: $border-width;
+          border-right: $border-width solid $orange-1;
+          right: 0.2em;
           bottom: -0.2em;
         }
       }

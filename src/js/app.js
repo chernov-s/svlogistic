@@ -21,6 +21,8 @@
 
             return {
                 init: function () {
+                    AssetsLoader.init();
+
                     Navigation.init();
 
                     Scroll.init();
