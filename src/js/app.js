@@ -13,6 +13,13 @@
 
     $(document).ready(function () {
 
+        /*================================================
+         LOADING
+         =================================================*/
+        $(window).on('load', function(){
+            AssetsLoader.init();
+        });
+
         //=require include/*.js
 
         var App = (function ($) {

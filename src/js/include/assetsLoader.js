@@ -12,9 +12,8 @@ var AssetsLoader = (function ($) {
     return {
         init: function () {
             var self = this;
-            $(window).on('load', function(){
-                self._preCacheImg();
-            });
+            $('#overlay').hide();
+            this._preCacheImg();
         },
         /*
          * Load img to cache
