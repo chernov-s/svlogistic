@@ -7,22 +7,25 @@ mixin serviceChild(item)
 
 mixin serviceRender(item)
     li.services-list__item(data-row=item.row)
-        i.icon(class=item.icon)
-        img(src=item.img)
-        .title
-            h4= item.title
-        ul.list.js-child
-            for service in item.child
-                +serviceChild(service)
+        .wrap
+            .item-icon
+                i.icon(class=item.icon)
+            img(src=item.img)
+            .title
+                h4= item.title
+            ul.list.js-child
+                for service in item.child
+                    +serviceChild(service)
 
-+tmpl('Наши услуги', 'services', '', '[{"label":"Посмотреть все","url":"#"}]')
-    ul.services-list
-        - var i = 0
-        for item in serviceList
-            if i == 2
-                li.services-list__detail
-            +serviceRender(item)
-            - i = i + 1
++tmpl('Наши услуги', 'services', 'g-bg-light', '[{"label":"Посмотреть все","url":"#"}]')
+    .b-main-container
+        ul.services-list
+            - var i = 0
+            for item in serviceList
+                if i == 2
+                    li.services-list__detail
+                +serviceRender(item)
+                - i = i + 1
 
-        li.services-list__footer
-            a.btn.btn-primary.btn-lg.service-btn-show-all(href='#') Посмотреть все
+            li.services-list__footer
+                a.btn.btn-outline-warning.btn-lg.service-btn-show-all(href='#') Посмотреть все

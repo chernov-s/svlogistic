@@ -39,7 +39,8 @@
         toggleDetail: function (el) {
             //Очищаем раскрывшийся список услуг
             $detail.empty();
-
+            $detail.removeClass('offset-bottom');
+            $detail.removeClass('offset-top');
             //Является ли текущий элемент раскрытым?
             if(el.hasClass(active)) {
                 $services.removeClass(active);
@@ -47,13 +48,22 @@
                 this.toDefault();
                 $detail.hide();
             } else {
+                //Номер строки
+                var row = Math.abs(el.data('row') - 1);
+
+                //Добавляем класс для того, чтобы добавить отступ сверху либо снизу
+                if(row) {
+                    $detail.addClass('offset-bottom');
+                } else {
+                    $detail.addClass('offset-top');
+                }
                 $services.removeClass(active);
                 el.addClass(active);
                 $detail.addClass(active);
                 $detail.show();
                 //Копируем дочерние элементы услуги в расрытый элемент detail
                 var child = el.find('.js-child').clone().appendTo('.' + detail);
-                this.toSmall(Math.abs(el.data('row') - 1), child.height());
+                this.toSmall(row, child.height());
             }
 
 
@@ -68,12 +78,12 @@
         toSmall: function (row, childHeight) {
             this.toDefault();
             $serviceList.addClass(active);
-            $small = $('.' + serviceItem + '[data-row="' + row + '"]');
-            $small.addClass('small');
+            $compressed = $('.' + serviceItem + '[data-row="' + row + '"]');
+            $compressed.addClass('compressed');
         },
 
         toDefault: function () {
-            $services.removeClass('small');
+            $services.removeClass('compressed');
             $serviceList.removeClass(active);
         }
     };

@@ -1,14 +1,13 @@
 .services-list {
   list-style: none;
-  width: 80%;
   padding: 0;
-  height: 70%;
+  height: 70vh;
 
   &.active {
-    & > li {
+    & > li .wrap {
       background-color: $gray-1;
     }
-    & > li.active {
+    & > li.active .wrap {
       background-color: white;
     }
   }
@@ -17,25 +16,35 @@
   &__item {
     width: 50%;
     height: 50%;
-    border: 0.5px solid #ccc;
-    padding: 0.5em;
     float: left;
     position: relative;
     cursor:  pointer;
     text-align: center;
-    &:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: .5em;
+    .wrap {
+      background-color: white;
+      height: 100%;
+      border: .5px solid #ccc;
+      width: 100%;
+      box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.5);
+      padding: 0.5em;
+      &:hover {
+        box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.5);
+      }
     }
+
+
     .title {
       position: absolute;
-      bottom: 0.5rem;
+      bottom: 1em;
       width: 97%;
       h4 {
         font-size: 2rem;
       }
     }
     img {
-      width: 60%;
+      width: 70%;
+      max-height: 80%;
     }
     .list {
       list-style: none;
@@ -43,20 +52,30 @@
       padding: 0;
     }
 
-    .icon {
+    .item-icon {
       position: absolute;
-      right: 1rem;
-      top:  1rem;
+      right: 3em;
+      top: 2em;
+      width: 2em;
+      .icon {
+        position: absolute;
+      }
     }
 
     // Begin small item
-    &.small {
+    &.compressed {
       height: 25%;
-      display: table;
-      background-color: $gray-1;
-      .icon {
-        position: absolute;
-        left: 1rem;
+      .wrap {
+        background-color: $gray-1;
+        display: table;
+      }
+      .item-icon {
+        display: table-cell;
+        vertical-align: middle;
+        position: inherit;
+        .icon {
+          position: inherit;
+        }
       }
       .title {
         position: relative;
@@ -87,10 +106,13 @@
     float: left;
     width: 100%;
     height: 25%;
-    background-color: $dark-1 !important;
+    padding: .5em;
     .list {
       list-style: none;
       column-count: 3;
+      background-color: $dark-1 !important;
+      width: 100%;
+      height: 100%;
       a {
         color: white;
         &:hover {
@@ -99,6 +121,9 @@
       }
       li {
 
+        a {
+          display: block;
+        }
       }
     }
   }
@@ -107,5 +132,14 @@
     padding: 1em 0;
     clear: both;
     background-color: transparent !important;
+  }
+}
+
+.offset {
+  &-top {
+    margin-bottom: -1em;
+  }
+  &-bottom {
+    margin-top: -1em;
   }
 }
