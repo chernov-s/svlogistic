@@ -1,0 +1,44 @@
+#getcostModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='getcostModal', aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            button.close.modal-hide(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true')
+            .modal-header
+                h5#questionModalLabel.modal-title Здравствуйте
+
+            .modal-body
+                form
+                    .form-group
+                        label Заполните форму ниже, чтобы получить расчет в течение 1 рабочего дня
+                    .form-group.row
+                        label.col-3.col-form-label.label.text-uppercase(for='from-gruz') Что везём?
+                        .col-9
+                            input#from-gruz.form-control(type='text', placeholder='')
+                            label(for='from-gruz') Опишите ваш груз
+                    .form-group.row
+                        .col-6
+                            input#from-from.form-control(type='text', placeholder='')
+                            label(for='from-from') Откуда везём?
+                        .col-6
+                            input#from-to.form-control(type='text', placeholder='')
+                            label(for='from-to') Куда везём?
+                    .form-group
+                        label.label-title(for='from-phone') Знаете вес/объём груза?
+                        .row
+                            label.col-2.col-form-label.label(for='from-weight') Вес (кг)
+                            .col-4
+                                input#from-weight.form-control(type='text', placeholder='')
+                            label.col-3.col-form-label.label(for='from-size') Объём (м3)
+                            .col-3
+                                input#from-size.form-control(type='text', placeholder='')
+                    .form-group
+                        input#from-name.form-control(type='text', placeholder='Ваше имя')
+                        label(for='from-name') Как к вам обращаться?
+                    .form-group
+                        input#from-phone.form-control(type='text', placeholder='Ваш номер телефона')
+                        label(for='from-phone') Перезвоним, если возникнут вопросы
+                    .form-group
+                        input#from-mail.form-control(type='text', placeholder='Ваш email')
+                        label(for='from-mail') На какую почту направить счёт?
+                    .form-group.action
+                        button.btn.btn-primary.btn-lg(type='button') Получить расчёт
