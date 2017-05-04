@@ -54,7 +54,7 @@ var Scroll = (function($) {
         _event: function () {
             var self = this;
             self._keyPressHandler();
-
+            self._disableScrollModal();
         },
 
         _keyPressHandler: function () {
@@ -70,7 +70,15 @@ var Scroll = (function($) {
                         break;
                 }
             });
-
+        },
+        /*
+         * Отключаем плагин fullpage когда открыты модальные окна
+         */
+        _disableScrollModal: function () {
+            $('.modal').on('mousewheel', function (e) {
+                $.fn.fullpage.setMouseWheelScrolling(false);
+                $.fn.fullpage.setAllowScrolling(false);
+            });
         }
     };
 

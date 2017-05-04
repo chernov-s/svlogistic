@@ -43,6 +43,6 @@ mixin nav(item)
             //- for menu in menuList
                 +nav(menu)
         .b-sidebar__footer.b-footer-abs
-            a.b-sidebar__callback.btn.btn-outline-primary.btn-lg(role="button", href="#")
+            a.b-sidebar__callback.btn.btn-outline-primary.btn-lg(role="button", href="javascript:void(0)", data-toggle="modal", data-target="#questionModal")
                 i.b-sidebar__callback-icon
-                .b-sidebar__callback-label(data-toggle="modal", data-target="#questionModal") &nbsp;Задать вопрос
+                .b-sidebar__callback-label &nbsp;Задать вопрос

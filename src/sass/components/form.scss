@@ -36,6 +36,10 @@
     background-color: $orange-1;
     border-color: $orange-1;
   }
+  &.active {
+    background-color: $blue-1;
+    color: $white-1;
+  }
 }
 .form-control {
   border-radius: 0;
