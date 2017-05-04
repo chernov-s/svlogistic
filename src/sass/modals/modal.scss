@@ -51,7 +51,7 @@
     text-align: center;
   }
   .form-control {
-    &::placeholder, &:-ms-input-placeholder {
+    &::placeholder {
       text-transform: uppercase;
     }
 
