@@ -13,12 +13,6 @@
 
     $(document).ready(function () {
 
-        /*================================================
-         LOADING
-         =================================================*/
-        $(window).on('load', function(){
-            AssetsLoader.init();
-        });
 
         //=require include/*.js
 
@@ -28,6 +22,9 @@
 
             return {
                 init: function () {
+                    /*================================================
+                     LOADING
+                     =================================================*/
                     AssetsLoader.init();
 
                     Navigation.init();

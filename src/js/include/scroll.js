@@ -4,8 +4,7 @@ var Scroll = (function($) {
 
     };
 
-    var $fullPage = $('.js-full-page'),
-        $link = $('.js-link');
+    var $fullPage = $('.js-full-page');
 
     var ascensor = null,
         ascensorInstance = null,
@@ -42,10 +41,7 @@ var Scroll = (function($) {
                 onLeave: function(index, nextIndex, direction){
                     numberCurrentSection = nextIndex - 1;
                     ascensorInstance.scrollToFloor(numberCurrentSection);
-                },
-                afterLoad: function(anchorLink, index){
-
-                },
+                }
             });
 
             this._event();
