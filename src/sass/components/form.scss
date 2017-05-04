@@ -37,3 +37,11 @@
     border-color: $orange-1;
   }
 }
+.form-control {
+  border-radius: 0;
+  border-color: $black-3;
+  padding: 0.7rem .75rem;
+  &:focus {
+    border-color: $black-2;
+  }
+}

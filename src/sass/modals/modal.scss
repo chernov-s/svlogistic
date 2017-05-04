@@ -1,0 +1,66 @@
+.modal {
+  &-content {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 0;
+  }
+  &-header {
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    padding-top: 1.5em;
+    h5 {
+      font-size: 2.5rem;
+    }
+  }
+  &-body {
+    padding: 15px 25px;
+  }
+  &-hide {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    width: 1em;
+    height: 1em;
+    span {
+      opacity: 0;
+    }
+    &:before, &:after {
+      position: absolute;
+      margin-top: -1px;
+      content: '';
+      height: 2px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      background-color: $black-3;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+    &:hover {
+      &:before, &:after {
+        background-color: $black-2;
+      }
+    }
+  }
+  .action {
+    text-align: center;
+  }
+  .form-control {
+    &::placeholder, &:-ms-input-placeholder {
+      text-transform: uppercase;
+    }
+
+  }
+  label {
+    color: $black-1;
+    font-size: 0.8rem;
+  }
+  .label-title {
+    font-size: 1.4rem;
+  }
+}

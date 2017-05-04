@@ -1,0 +1,25 @@
+#questionModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='questionModal', aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            button.close.modal-hide(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true')
+            .modal-header
+                h5#questionModalLabel.modal-title Здравствуйте
+
+            .modal-body
+                form
+                    .form-group
+                        input#from-name.form-control(type='text', placeholder='Ваше имя')
+                        label(for='from-name') Как к вам обращаться?
+                    .form-group
+                        label.label-title(for='from-phone') Мы перезвоним вам на номер
+                        input#from-phone.form-control(type='text', placeholder='Ваш номер телефона')
+                        label(for='from-phone') Введите ваш контактный номер телефона
+                    .form-group
+                        input#from-mail.form-control(type='text', placeholder='Ваш email')
+                        label(for='from-mail') На какую почту направить счёт?
+                    .form-group
+                        textarea#form-message.form-control(rows='3', placeholder='Ваш вопрос')
+                        label(for='form-message') Ваш вопрос
+                    .form-group.action
+                        button.btn.btn-primary.btn-lg(type='button') Задать вопрос
