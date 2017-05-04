@@ -42,6 +42,7 @@ var paths = {
             //modules + 'jquery.nicescroll/jquery.nicescroll.min.js',
             vendor + 'jquery.ascensor.min.js',
             vendor + 'jquery.mousewheel.min.js',
+            vendor + 'jquery.maskedinput.min.js',
             vendor + 'slick.min.js',
             modules + 'fullpage.js/dist/jquery.fullpage.min.js',
             modules + 'slick-carousel/slick/slick.min.js',

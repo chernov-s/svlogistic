@@ -94,6 +94,12 @@
                             });
                         });
 
+                    /*
+                     * Masked Input Plugin for jQuery
+                     * https://github.com/digitalBush/jquery.maskedinput
+                     */
+                    $('.js-phone').mask('+7 (999) 999-99-99');
+
                 },
 
                 /** @type {function(...*)} */
