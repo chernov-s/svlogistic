@@ -47,8 +47,8 @@
                         autoplaySpeed: 10000,
                         dots: true,
                         customPaging : function(slider, i) {
-                            //var thumb = $(slider.$slides[i]).data();
-                            return '<a>' + (i+1) + '</a>';
+                            var cl = $(slider.$slides[i]).data('dot');
+                            return '<a class="' + cl + '" href="javascript:void(0)">&nbsp;</a>';
                         }
                     });
 

@@ -1,54 +1,24 @@
 include _tmpl
+include source/reviewList
+
+mixin reviewRender(item)
+    .reviews__item(data-dot=item.dot)
+        .reviews__item-thumbnail
+            h4= item.company
+            img(src= item.img)
+        .reviews__item-decription
+            .row
+                .col-sm-4
+                    h5 Клиент:
+                    p !{item.client}
+                .col-sm-4
+                    h5 Задача:
+                    p !{item.task}
+                .col-sm-4
+                    h5 Решение:
+                    p !{item.solve}
 
 +tmpl('Они довольны нами', 'reviews', 'g-bg-light')
     .reviews.b-main-container.js-review.b-slick-arrow
-        .reviews__item
-            .reviews__item-thumbnail
-                h3 Востокцемент
-                img(src="assets/img/reviews/1.png")
-            .reviews__item-decription
-                .row
-                    .col-xs-12.col-sm-8
-                        h3 Что сделали
-                        p
-                            | текст того, что делали для клиента.
-                            | текст того, что делали для клиента. текст того, что делали для клиента.
-                            | текст того, что делали для клиента. текст того, что делали для клиента.
-                    .col-xs-12.col-sm-4
-                        h3 Сроки
-                        p
-                            | Сроки в которые сделали
-
-        .reviews__item
-            .reviews__item-thumbnail
-                h3 Востокцемент 2
-                img(src="assets/img/reviews/1.png")
-            .reviews__item-decription
-                .row
-                    .col-xs-12.col-sm-8
-                        h3 Что сделали
-                        p
-                            | текст того, что делали для клиента.
-                            | текст того, что делали для клиента. текст того, что делали для клиента.
-                            | текст того, что делали для клиента. текст того, что делали для клиента.
-                    .col-xs-12.col-sm-4
-                        h3 Сроки
-                        p
-                            | Сроки в которые сделали
-
-        .reviews__item
-            .reviews__item-thumbnail
-                h3 Востокцемент 3
-                img(src="assets/img/reviews/1.png")
-            .reviews__item-decription
-                .row
-                    .col-xs-12.col-sm-8
-                        h3 Что сделали
-                        p
-                            | текст того, что делали для клиента.
-                            | текст того, что делали для клиента. текст того, что делали для клиента.
-                            | текст того, что делали для клиента. текст того, что делали для клиента.
-                    .col-xs-12.col-sm-4
-                        h3 Сроки
-                        p
-                            | Сроки в которые сделали
+        for item in reviewList
+            +reviewRender(item)
