@@ -11,7 +11,7 @@
       img {
         position: absolute;
         bottom: -.05em;
-        height: 6em;
+        height: 7em;
         transform: translateX(100%);
         transition: 2s ease-in-out;
       }
@@ -22,9 +22,6 @@
       top: 0;
       transform: translateX(240%);
       transition: 2s ease-in-out;
-      img {
-        height: 100%;
-      }
       &-text {
         position: absolute;
         top: 0.5em;
@@ -66,13 +63,9 @@
     &-inner {
       &__train {
         img {
-          transform: translateX(-45%);
+          transform: translateX(-20%);
         }
       }
-      &__hello {
-        transform: translateX(65%);
-      }
-
     }
   }
 }

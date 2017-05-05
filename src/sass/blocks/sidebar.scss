@@ -1,5 +1,6 @@
 .b-sidebar {
-  z-index: 10;
+  position: relative;
+  z-index: 1;
   width: $w-sidebar-lg;
   height: 100%;
   border-right: 2px solid white;

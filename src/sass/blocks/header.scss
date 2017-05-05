@@ -1,7 +1,7 @@
 .b-header {
   background-color: white;
-
-  position: absolute;
+  position: relative;
+  z-index: 10;
   width: 100%;
   // Start header inner
   &-inner {

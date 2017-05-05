@@ -16,24 +16,11 @@ html {
 
 .b-main {
   height: 100%;
-  margin-top: $h-header-lg;
+  position: relative;
+  z-index: 1;
 
   &-container {
     width: 80%;
-  }
-
-  @include screen-h(sm) {
-    margin-top: $h-header-sm;
-  }
-  @include screen-h(md) {
-    margin-top: $h-header-md;
-  }
-
-  @include screen-w(sm) {
-    margin-top: $h-header-sm;
-  }
-  @include screen-w(md) {
-    margin-top: $h-header-md;
   }
 }
 
