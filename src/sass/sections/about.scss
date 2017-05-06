@@ -3,6 +3,12 @@
   &__item {
     padding-left: 3em;
     padding-right: 3em;
+    line-height: 1.2;
+    &:first-child {
+      hr {
+        opacity: 0;
+      }
+    }
     hr {
       border-bottom: 0.05em solid $orange-1;
     }
@@ -35,7 +41,7 @@
     $border-width: 0.15em;
     width: 100%;
     top: -4em;
-    border-bottom: $border-width solid white;
+
     padding: 0;
     li {
       position: relative;
@@ -56,6 +62,7 @@
         line-height: 1rem;
         text-transform: uppercase;
         width: 4em;
+        transition: all 200ms ease-in;
         &:after {
           content: '';
           position: absolute;
@@ -67,16 +74,19 @@
           background-color: white;
         }
       }
+      &:after {
+        content: '';
+        border-top: $border-width solid white;
+        position: absolute;
+        transition: all 200ms ease-in;
+        width: 8em;
+        top: 0.36em;
+        left: 0;
+      }
 
       &.complete, &:first-child {
         &:after {
-          content: '';
           border-top: $border-width solid $orange-1;
-          position: absolute;
-          transition: all 200ms ease-in;
-          width: 8em;
-          top: 0.36em;
-          left: 0;
         }
         button {
           &:after {
