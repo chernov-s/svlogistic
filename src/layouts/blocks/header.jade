@@ -1,20 +1,21 @@
 section.b-header.b-header-inner.js-horizontal-page
     .b-header-inner__wrap.row
 
-        .col-xs-8.col-sm-5.col-md-4.col-lg-3
+        .col-xs-8.col-sm-4.col-md-3.col-lg-3
             a.b-header-inner__logo(href="#home")
 
-        .col-sm-1.col-md-1.col-lg-4
+        .col-lg-4.hidden-md-down
             .coming-soon
                 span Сайт находится в разработке
-        .col-xs-4.col-sm-2.col-md-3.col-lg-3
-            .b-header-inner__contact
+        .col-sm-8.col-md-5.col-lg-5.b-header-inner__right
+            .b-header-contact
                 .phone 8 800 100 89 49
                 .free-call Звонок по России бесплатный
                 .mail vost@sv-log.ru
-
-        .col-sm-4.col-md-3.col-lg-2.hidden-xs-down
-            .b-header-inner__right
+            .b-header-call-me
                 a.b-header-inner__btn.btn.btn-primary.btn-lg(role="button", href="javascript:void(0)", data-toggle="modal", data-target="#callmeModal")
                     .b-header-inner__btn-icon
                     .b-header-inner__btn-label &nbsp;&nbsp;Перезвоните мне
+            .b-header-personal
+                a.b-link-personal.icon.icon-user(href="javascript:void(0)")
+

@@ -1,5 +1,10 @@
 .icon {
   display: inline-block;
+
+  &-user {
+    @include sprite($icon-user);
+  }
+
   &-man {
     @include sprite($icon-man);
   }

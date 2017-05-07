@@ -40,23 +40,10 @@
       }
     }
 
-    &__contact {
-      font-size: 1.4rem;
-      text-align: right;
-      padding-right: 2rem;
-      margin-top: -.5rem;
-      .phone {
-        font-weight: bold;
-        word-wrap: normal;
-      }
-      .free-call {
-        font-size: .74rem;
-        line-height: 0;
-        padding-bottom: .3rem;
-      }
-    }
-
     &__right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
     //Media query
     @include screen-h(sm) {
@@ -78,6 +65,27 @@
     //End media query
   }
   //End header inner
+
+  &-contact {
+    font-size: 1.4rem;
+    text-align: right;
+    padding-right: 2.5em;
+    margin-top: -.5rem;
+    .phone {
+      font-weight: bold;
+      word-wrap: normal;
+    }
+    .free-call {
+      font-size: .65rem;
+      line-height: 0;
+      padding-bottom: .3rem;
+    }
+  }
+
+}
+
+.b-link-personal {
+  margin-left: 1em;
 }
 
 .coming-soon {
