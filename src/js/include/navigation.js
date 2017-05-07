@@ -46,7 +46,7 @@ var Navigation = (function($) {
                     //Parse JSON data from child element in $pages
                     childList += '<ul>';
                     for(i = 0; i < item.list.length; i++) {
-                        childList += '<li><a href="'+ item.list[0].url +'">'+ item.list[0].label +'</a></li>';
+                        childList += '<li><a href="'+ item.list[0].url +'" class="b-arrow">'+ item.list[0].label +'</a></li>';
                     }
                     childList += '</ul>';
                 }

@@ -24,7 +24,15 @@
       border-left: 1px solid $orange-1;
       &:hover, &:focus {
         text-decoration: none;
-        color: $black-2;
+        color: $black-1;
+      }
+    }
+    .b-arrow {
+      &:after {
+        border-color: $black-2;
+        padding: 0.4em;
+        position: absolute;
+        top: 35%;
       }
     }
     &.dark-theme {
@@ -32,8 +40,8 @@
       color: white;
       .b-arrow {
         color: white;
-        &:before, &:after {
-          background-color: white;
+        &:after {
+          border-color: white;
         }
       }
     }
