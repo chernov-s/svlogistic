@@ -50,6 +50,11 @@
       list-style: square;
       li {
         line-height: 2rem;
+        font-weight: bold;
+        span {
+          font-weight: normal;
+          color: $gray-2;
+        }
       }
     }
     h1 {
