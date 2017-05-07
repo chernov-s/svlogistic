@@ -14,6 +14,15 @@
     }
   }
 
+  &-list {
+    &-icon {
+      text-align: center;
+      span {
+        display: block;
+      }
+    }
+  }
+
   .slick-arrow {
     &:before, &:after {
       background-color: $gray-2;
@@ -41,7 +50,6 @@
     $border-width: 0.15em;
     width: 100%;
     top: -4em;
-
     padding: 0;
     li {
       position: relative;
@@ -49,6 +57,15 @@
       margin-right: 2em;
       width: 3em;
       text-align: center;
+      .dot {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        right: -1px;
+        bottom: -6px;
+        border-radius: 5px;
+        background-color: white;
+      }
       button {
         background-color: transparent;
         outline: 0;
@@ -62,33 +79,37 @@
         line-height: 1rem;
         text-transform: uppercase;
         width: 4em;
-        transition: all 200ms ease-in;
+      }
+      &:last-child {
+        button {
+          top: -3em;
+        }
+      }
+      &:first-child {
         &:after {
-          content: '';
-          position: absolute;
-          width: .6em;
-          height: .6em;
-          right: 41%;
-          bottom: -1.25em;
-          border-radius: (1em / 2);
-          background-color: white;
+          width: 9em;
+          left: 0;
         }
       }
       &:after {
         content: '';
         border-top: $border-width solid white;
         position: absolute;
-        transition: all 200ms ease-in;
-        width: 8em;
-        top: 0.36em;
-        left: 0;
+        width: 6em;
+        top: 0;
+        left: 3em;
       }
 
+
       &.complete, &:first-child {
+        .dot {
+          background-color: $orange-1;
+        }
         &:after {
           border-top: $border-width solid $orange-1;
         }
         button {
+          color: $orange-1;
           &:after {
             background-color: $orange-1;
           }
@@ -96,6 +117,19 @@
       }
 
       &.slick-active {
+        .dot {
+          background-color: $orange-1;
+          &:before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            border-radius: 8px;
+            left: -3px;
+            top: -3px;
+            border: 1px solid $orange-1;
+          }
+        }
         button {
           top: -5em;
           color: $black-1;
@@ -105,10 +139,6 @@
           border-radius: 2em;
           border: $border-width solid $orange-1;
           background-color: white;
-          &:after {
-            bottom: -1.9em;
-            background-color: $orange-1;
-          }
         }
         &:before {
           content: '';
@@ -116,7 +146,7 @@
           height: 2em;
           width: $border-width;
           border-right: $border-width solid $orange-1;
-          right: 0.2em;
+          right: 4px;
           bottom: -0.2em;
         }
       }

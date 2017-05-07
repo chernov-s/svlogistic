@@ -1,4 +1,5 @@
 .icon {
+  display: inline-block;
   &-man {
     @include sprite($icon-man);
   }
@@ -41,5 +42,16 @@
   }
   &-delivery {
     @include sprite($icon-delivery);
+  }
+
+  //About
+  &-waggon-o {
+    @include sprite($icon-waggon-o);
+  }
+  &-stock-o {
+    @include sprite($icon-stock-o);
+  }
+  &-container-o {
+    @include sprite($icon-container-o);
   }
 }

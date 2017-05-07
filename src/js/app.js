@@ -71,7 +71,7 @@
                         customPaging : function(slider, i) {
                             //Change default dots
                             var _date = $(slider.$slides[i]).data("year");
-                            return '<button>' + _date + '</button>';
+                            return '<button>' + _date + '</button><span class="dot"></span>';
                         }
                     })
                         .on('beforeChange', function(event, slick, currentSlide, nextSlide){
