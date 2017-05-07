@@ -73,16 +73,14 @@
     border: 1px solid white;
     text-transform: uppercase;
     width: $w-sidebar-lg - 20 * 2;
+    display: flex;
+    justify-content: center;
     &.active {
       background-color: $white-1;
       color: $orange-1;
     }
     &-icon {
       @include sprite($question);
-      display: inline-table;
-      position: relative;
-      margin-left: -0.5em;
-      top: 0.18em;
     }
     &-label {
 
