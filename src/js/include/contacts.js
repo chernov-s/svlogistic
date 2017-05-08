@@ -7,7 +7,7 @@
         $navTab = $tabs.find('button'),
         $content = $('.contact .tab-pane');
 
-    var Services = {
+    var Contacts = {
         /**
          * @access public
          */
@@ -43,6 +43,6 @@
         }
     };
 
-    Services.init();
+    Contacts.init();
 
 })($);

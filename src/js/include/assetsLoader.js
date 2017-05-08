@@ -1,8 +1,11 @@
 var AssetsLoader = (function ($) {
 
+    var $images;
+
     return {
         init: function () {
             var self = this;
+            $images = $('*[data-image]');
             this._preCacheImg();
             $('#overlay').hide();
         },
@@ -10,11 +13,10 @@ var AssetsLoader = (function ($) {
          * Load img to cache
          */
         _preCacheImg: function () {
-            $.fn.preload = function() {
-                this.each(function() {
-                    $('<img/>')[0].src = this;
-                });
-            };
+            $.each($images, function(){
+                var img = new Image();
+                img.src = $(this).data('image');
+            });
         }
     }
 })($);
