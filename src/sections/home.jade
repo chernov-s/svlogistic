@@ -2,7 +2,7 @@ include _tmpl
 
 +tmpl('Главная', 'home', 'dark-theme home-page')
     .home-page-video
-        video.home-page-video__flow(playsinline, autoplay, muted, loop)
+        video.home-page-video__flow.js-video(playsinline, autoplay, muted, loop)
             source(data-src='http://sv-log.ru/assets/sea.mp4', type='video/mp4')
     .slick
         .js-home-slick

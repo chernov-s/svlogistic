@@ -16,6 +16,9 @@ var Scroll = (function($) {
          * @access public
          */
         init: function () {
+
+            var self = this;
+
             /*================================================
              ASCENSOR
              https://github.com/kirkas/Ascensor.js
@@ -27,12 +30,13 @@ var Scroll = (function($) {
             ascensorInstance = ascensor.data('ascensor');
             ascensor.on("scrollStart", function(e, floor){
                 numberCurrentSection = floor.to;
+                //TODO: Предполагается, что видео находится только на первой секции. Если видео будет на нескольких сикциях, то можно будет это доработать
+                numberCurrentSection == 0 && self._playVideo();
             });
             /*================================================
              FULL PAGE
              https://github.com/alvarotrigo/fullPage.js
              =================================================*/
-            var self = this;
             fullpageInstance = $fullPage.fullpage({
                 anchors: Navigation.anchor,
                 sectionSelector: '.b-pages__item',
@@ -66,6 +70,13 @@ var Scroll = (function($) {
                 }
             });
         },
+
+        /*
+         * Запускаем видео, так как при смене секции это видео останавливается.
+         */
+        _playVideo: function () {
+            $('.js-video').get(0).play();
+        }
 
     };
 

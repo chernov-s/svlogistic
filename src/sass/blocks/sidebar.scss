@@ -89,7 +89,7 @@
     text-transform: uppercase;
     width: $w-sidebar-lg - 20 * 2;
     display: flex;
-    justify-content: center;
+    align-items: center;
     &.active {
       background-color: $white-1;
       color: $orange-1;
