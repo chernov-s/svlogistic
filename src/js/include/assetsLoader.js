@@ -7,7 +7,9 @@ var AssetsLoader = (function ($) {
             var self = this;
             $images = $('*[data-image]');
             this._preCacheImg();
-            $('#overlay').hide();
+            setTimeout(function() {
+                $('#overlay').hide();
+            }, 50);
         },
         /*
          * Load img to cache

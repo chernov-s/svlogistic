@@ -12,7 +12,7 @@ mixin factRender(item)
 +tmpl('Факты о нас', 'facts', 'g-overflow-hidden')
     .fact-inner.g-bg-light.b-page-wrap-fill
         .fact-inner__train
-            img(src="assets/img/train.png")
+            img(src="assets/img/train.png", data-image="assets/img/train.png")
     .b-main-container
         .fact-list.row
             for item in factList
