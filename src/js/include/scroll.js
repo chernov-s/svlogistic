@@ -43,11 +43,14 @@ var Scroll = (function($) {
                 menu: '#menu',
                 scrollingSpeed: 1000,
                 onLeave: function(index, nextIndex, direction){
+
                     numberCurrentSection = nextIndex - 1;
                     ascensorInstance.scrollToFloor(numberCurrentSection);
                     Navigation.toggleSideBar(true);
                 }
             });
+
+
 
             this._event();
         },
@@ -55,6 +58,10 @@ var Scroll = (function($) {
         _event: function () {
             var self = this;
             self._keyPressHandler();
+            $( window ).resize(function () {
+                self._resize();
+            });
+            self._resize();
         },
 
         _keyPressHandler: function () {
@@ -77,6 +84,19 @@ var Scroll = (function($) {
          */
         _playVideo: function () {
             $('.js-video').get(0).play();
+        },
+        
+        _resize: function () {
+            if(skel.vars.mobile || $(window).width() < 480) {
+                $('body').css('overflow-y', 'auto');
+                // Mobile: Отключаемплагин fullpage
+                $.fn.fullpage.setMouseWheelScrolling(false);
+                $.fn.fullpage.setAllowScrolling(false);
+            } else {
+                $('body').css('overflow', 'hidden');
+                $.fn.fullpage.setMouseWheelScrolling(true);
+                $.fn.fullpage.setAllowScrolling(true);
+            }
         }
 
     };

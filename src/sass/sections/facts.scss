@@ -64,6 +64,9 @@
       &__train {
         img {
           transform: translateX(-20%);
+          @include screen-w(mobile) {
+            transform: translateX(-40%);
+          }
         }
       }
     }

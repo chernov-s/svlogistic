@@ -66,7 +66,7 @@ var Navigation = (function($) {
             $pages.each(function (i, e) {
                 if(i < len - 1) {
                     item = items[i + 1];
-                    $(e).append('<a href="#' + item.url + '" class="' + BTN_NEXT_PAGE + ' b-arrow">' + item.name + '</a>');
+                    $(e).append('<div class="b-pages-controller"><a href="#' + item.url + '" class="' + BTN_NEXT_PAGE + ' b-arrow">' + item.name + '</a></div>');
                 }
             });
         },

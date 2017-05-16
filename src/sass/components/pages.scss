@@ -13,10 +13,7 @@
     &-next {
       display: block;
       font-weight: bold;
-      position: absolute;
       padding: .5em 2em .5em 1em;
-      right: 0;
-      top: 30%;
       text-transform: uppercase;
       color: $black-1;
       font-size: 1.2rem;
@@ -26,23 +23,6 @@
         color: $black-1;
       }
 
-      @include screen-w(mobile) {
-        top: 1em;
-        left: 38%;
-        font-size: 1rem;
-        padding: .2em 2em .2em 1em;
-      }
-    }
-    .b-arrow {
-      &:after {
-        border-color: $black-2;
-        padding: 0.4em;
-        position: absolute;
-        top: 35%;
-        @include screen-w(mobile) {
-          top: 25%;
-        }
-      }
     }
     &.dark-theme {
       background-color: $dark-1;
@@ -60,6 +40,43 @@
 
   .row {
     margin: 0;
+  }
+
+  &-controller {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 20%;
+    .b-arrow {
+      position: relative;
+      top: 30%;
+      &:after {
+        border-color: $black-2;
+        padding: 0.4em;
+        position: absolute;
+        top: 35%;
+        right: 10px;
+        @include screen-w(mobile) {
+          top: 25%;
+        }
+      }
+    }
+    @include screen-w(mobile) {
+      width: 100%;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      height: 3em;
+      padding: 10px;
+      .b-arrow {
+        font-size: 1rem;
+        padding: .3em 2em .3em 1em;
+        top: auto;
+        display: flex;
+        align-items: center;
+      }
+    }
   }
 }
 
