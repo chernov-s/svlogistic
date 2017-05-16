@@ -12,7 +12,6 @@
       min-height: 35px;
       padding-right: 15px;
       padding-left: 15px;
-      width: 100%;
     }
     &__logo {
       background: url('/assets/img/logo.png') no-repeat;
@@ -23,6 +22,7 @@
       @include screen-w(mobile) {
         min-width: 220px;
       }
+
     }
     &__slogan {
       text-align: center;
@@ -41,12 +41,55 @@
     }
 
     &__left {
+      .navbar-toggler {
+        display: none;
+        height: 1.8em;
+        width: 2em;
+        padding: 0;
+        position: absolute;
+        left: 1em;
+        top: 0.3em;
+        cursor: pointer;
+        padding-top: 5px;
+        &:focus {
+          outline: none;
+        }
+        span {
+          width: 2em;
+          height: 2px;
+          background-color: $dark-2;
+          transition: all .4s;
+          display: block;
+          margin-bottom: 8px;
+        }
+        &.active {
+          padding-top: 0;
+          span {
+            position: absolute;
+          }
+          span:nth-child(1) {
+            transform: rotate(-45deg);
+          }
+          span:nth-child(2) {
+            transform: rotate(45deg);
+          }
+          span:nth-child(3) {
+            transform: rotate(45deg);
+          }
+        }
+      }
       @include screen-w(mobile) {
         display: flex;
         align-items: center;
         justify-content: center;
+        .navbar-toggler {
+          display: block;
+        }
       }
-    }
+      @include screen-w(sm) {
+        justify-content: flex-end;
+      }
+    }//End left
 
     &__right {
       display: flex;

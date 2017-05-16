@@ -45,6 +45,7 @@ var Scroll = (function($) {
                 onLeave: function(index, nextIndex, direction){
                     numberCurrentSection = nextIndex - 1;
                     ascensorInstance.scrollToFloor(numberCurrentSection);
+                    Navigation.toggleSideBar(true);
                 }
             });
 

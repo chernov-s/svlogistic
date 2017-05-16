@@ -107,11 +107,16 @@
 
   }
 
+  //Toggler
+  &.active {
+    transform: translateX(0%);
+  }
+
   //Media query
   @include screen-w(xs) {
-    transform: translateX(-100%);
+    width: 100%;
   }
-  @include screen-w(sm) {
+  @include screen-w(mobile) {
     transform: translateX(-100%);
   }
   //End media query

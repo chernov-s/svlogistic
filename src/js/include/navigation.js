@@ -5,7 +5,9 @@ var Navigation = (function($) {
     const BTN_NEXT_PAGE = 'b-pages__item-next';
 
     var $pages = $('.b-pages__item'), // Get page data
-        $sidebar = $('.b-sidebar__list');
+        $sidebar = $('.b-sidebar__list'),
+        $toggler = $('.js-navbar-toggler'),
+        $sidebarToggler = $('.js-sidebar');
 
     var __ = {
         /*
@@ -74,7 +76,23 @@ var Navigation = (function($) {
         }),
 
         event: function () {
+            var self = this;
+            $toggler.on('click', function () {
+                self.toggleSideBar($(this).hasClass('active'));
+            });
+        },
 
+        /*
+         * @param {boolean} status
+         */
+        toggleSideBar: function (status) {
+            if(status) {
+                $toggler.removeClass('active');
+                $sidebarToggler.removeClass('active');
+            } else {
+                $toggler.addClass('active');
+                $sidebarToggler.addClass('active');
+            }
         }
     };
 
