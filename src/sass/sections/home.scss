@@ -44,6 +44,10 @@
     }
     &-list {
       width: 70%;
+      @include screen-w(mobile) {
+        width: 100%;
+        margin-top: 3em;
+      }
     }
     ul {
       list-style: square;

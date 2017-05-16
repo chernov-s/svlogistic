@@ -10,7 +10,6 @@
     position: relative;
     height: 100%;
     width: 100%;
-    border-right: 1px solid #f00;
     &-next {
       display: block;
       font-weight: bold;
@@ -26,6 +25,13 @@
         text-decoration: none;
         color: $black-1;
       }
+
+      @include screen-w(mobile) {
+        top: 1em;
+        left: 38%;
+        font-size: 1rem;
+        padding: .2em 2em .2em 1em;
+      }
     }
     .b-arrow {
       &:after {
@@ -33,6 +39,9 @@
         padding: 0.4em;
         position: absolute;
         top: 35%;
+        @include screen-w(mobile) {
+          top: 25%;
+        }
       }
     }
     &.dark-theme {
@@ -45,6 +54,8 @@
         }
       }
     }
+
+
   }
 
   .row {

@@ -5,8 +5,8 @@
   width: 100%;
   // Start header inner
   &-inner {
-    padding-top: 30px;
-    min-height: $h-header-lg;
+    padding-top: 20px;
+    padding-bottom: 20px;
     box-shadow: 0 5px 5px rgba(0,0,0,0.2);
     &__wrap {
       min-height: 35px;
@@ -18,8 +18,11 @@
       background: url('/assets/img/logo.png') no-repeat;
       background-size: contain;
       display: block;
-      width: 100%;
+      min-width: 70%;
       height: 4em;
+      @include screen-w(mobile) {
+        min-width: 220px;
+      }
     }
     &__slogan {
       text-align: center;
@@ -37,27 +40,27 @@
       }
     }
 
+    &__left {
+      @include screen-w(mobile) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
     &__right {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      @include screen-w(mobile) {
+        justify-content: center;
+        padding-top: 5px;
+      }
     }
     //Media query
-    @include screen-h(sm) {
+    @include screen-w(mobile) {
       padding-top: 10px;
-      min-height: $h-header-sm;
-    }
-    @include screen-h(md) {
-      padding-top: 20px;
-      min-height: $h-header-md;
-    }
-    @include screen-w(sm) {
-      padding-top: 20px;
-      min-height: $h-header-sm;
-    }
-    @include screen-w(md) {
-      padding-top: 10px;
-      min-height: $h-header-md;
+      padding-bottom: 10px;
     }
     //End media query
   }
@@ -76,6 +79,10 @@
       font-size: .65rem;
       line-height: 0;
       padding-bottom: .3rem;
+    }
+
+    @include screen-w(mobile) {
+      font-size: 1.2rem;
     }
   }
 

@@ -25,7 +25,7 @@ $w-sidebar-md: 235px;
 $w-sidebar-lg: 15em;
 
 $h-header-xs: 90px;
-$h-header-sm: 90px;
+$h-header-sm: 80px;
 $h-header-md: 100px;
 $h-header-lg: 6em;
 
@@ -48,6 +48,9 @@ $w-xl: 1200px;
 @mixin screen-w($media) {
   @if $media == xs {
     @media only screen and (max-width: $w-sm) { @content; }
+  }
+  @else if $media == mobile {
+    @media (max-width: $w-md - 1) { @content; }
   }
   @else if $media == sm {
     @media only screen and (min-width: $w-sm + 1) and (max-width: $w-md - 1) { @content; }
