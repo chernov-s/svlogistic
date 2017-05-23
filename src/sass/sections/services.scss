@@ -54,37 +54,40 @@
 
     .item-icon {
       position: absolute;
-      right: 3em;
+      right: 2em;
       top: 2em;
       width: 2em;
       .icon {
         position: absolute;
+        right: 0;
       }
     }
 
     // Begin small item
     &.compressed {
-      height: 25%;
+      height: calc(25% + .5em);
       .wrap {
         background-color: $gray-1;
-        display: table;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .item-icon, .title {
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
       }
       .item-icon {
-        display: table-cell;
-        vertical-align: middle;
-        position: inherit;
+        flex-basis: 20%;
         .icon {
-          position: inherit;
+          position: relative;
         }
       }
       .title {
-        position: relative;
-        display: table-cell;
-        vertical-align: middle;
-        margin-left: 5em;
-        padding-top: 1em;
-        width: 80%;
         overflow: hidden;
+        flex-basis: 80%;
         h4 {
           text-align: left;
           font-size: 1.5rem;
@@ -105,24 +108,26 @@
     display: none;
     float: left;
     width: 100%;
-    height: 25%;
+    height: calc(25% + .5em);
     padding: .5em;
     .list {
       list-style: none;
-      column-count: 3;
       background-color: $dark-1 !important;
       width: 100%;
       height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      align-content: space-evenly;
+      li {
+        flex-basis: calc(33% - 20px);
+      }
+
       a {
         color: white;
+        display: block;
         &:hover {
           color: $blue-1;
-        }
-      }
-      li {
-
-        a {
-          display: block;
         }
       }
     }
@@ -132,6 +137,36 @@
     padding: 1em 0;
     clear: both;
     background-color: transparent !important;
+  }
+}
+
+@include screen-w(xs) {
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    &__item {
+      width: 100%;
+      height: 15em;
+
+    }
+    &__detail {
+      height: auto;
+      .list {
+        padding: 15px;
+        li {
+          flex-basis: 100%;
+          margin: 10px 0;
+          a {
+            line-height: .9rem;
+          }
+        }
+      }
+    }
+    &__footer {
+      order: 100;
+    }
+
   }
 }
 

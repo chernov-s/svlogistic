@@ -6,7 +6,7 @@ mixin serviceChild(item)
         a.js-link(href=item.url)=item.label
 
 mixin serviceRender(item)
-    li.services-list__item(data-row=item.row)
+    li.services-list__item.js-srv-item(data-row=item.row)
         .wrap
             .item-icon
                 i.icon(class=item.icon)
