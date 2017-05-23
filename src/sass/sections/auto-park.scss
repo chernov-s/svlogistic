@@ -5,7 +5,8 @@
     background-color: transparent;
     border: none;
     border-radius: 0;
-    border-right: 0.1em solid $dark-1;
+    box-sizing: border-box;
+    border-right: 2px solid transparent;
     &-thumbnail {
       text-align: center;
       img {
@@ -17,6 +18,10 @@
       white-space: nowrap;
       overflow: hidden;
     }
+    &-option {
+      display: flex;
+      flex-direction: column;
+    }
     .btn {
       border-color: $orange-3;
       color: $black-1;
@@ -27,11 +32,21 @@
       }
     }
 
+
+
   } //End card
+
+  .slick {
+    &-current {
+      border-right-color: $dark-1;
+    }
+  }
   .slick-dots {
     text-align: center;
     width: 100%;
     margin-top: 2em;
+    padding: 0;
+    left: 0;
     li {
       font-size: 1rem;
       margin-right: 0.5em;
@@ -47,6 +62,12 @@
           font-weight: bold;
         }
       }
+    }
+  }
+
+  @include screen-w(mobile) {
+    .card {
+      border: none;
     }
   }
 }

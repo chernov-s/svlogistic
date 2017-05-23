@@ -25,7 +25,8 @@ var Scroll = (function($) {
              =================================================*/
             ascensor = $('.js-pages').ascensor({
                 direction: 'x',
-                keyNavigation: true
+                keyNavigation: true,
+                swipeNavigation: false
             });
             ascensorInstance = ascensor.data('ascensor');
             ascensor.on("scrollStart", function(e, floor){

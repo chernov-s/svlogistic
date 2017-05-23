@@ -7,7 +7,7 @@ mixin autoRender(item)
             img.card-img-top(src=item.img)
         .card-block
             h4.card-title= item.brand
-            p.card-text
+            p.card-option
                 each option in item.options
                     span= option
             p.text-center

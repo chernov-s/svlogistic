@@ -68,9 +68,19 @@
                         autoplay: false,
                         autoplaySpeed: 10000,
                         dots: true,
+                        arrows: true,
                         slidesToShow: 2,
-                        slidesToScroll: 1
-                    });
+                        slidesToScroll: 1,
+                        responsive: [
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1
+                                }
+                            }
+                        ]
+                    })
 
                     /*
                      * Masked Input Plugin for jQuery
