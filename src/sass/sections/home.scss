@@ -1,4 +1,5 @@
 .home-page {
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -33,11 +34,23 @@
       overflow: hidden;
     }
   }
-}
-.btn-get-cost {
-  cursor: pointer;
-}
-.home-page {
+
+  ul {
+    list-style: square;
+    li {
+      line-height: 2rem;
+      font-weight: bold;
+      span {
+        font-weight: normal;
+        color: $gray-2;
+      }
+    }
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 4rem;
+  }
+
   .slick {
     &-slider {
       height: 100%;
@@ -49,22 +62,7 @@
         margin-top: 3em;
       }
     }
-    ul {
-      list-style: square;
-      li {
-        line-height: 2rem;
-        font-weight: bold;
-        span {
-          font-weight: normal;
-          color: $gray-2;
-        }
-      }
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 4rem;
-    }
-  }
+  } // End slick
 
   /* Dots */
   .slick-dots
@@ -105,4 +103,26 @@
       }
     }
   } //End dots
+
+  @include screen-w(mobile) {
+    ul {
+      padding-left: 18px;
+    }
+    h1 {
+      margin-bottom: .5em;
+    }
+    .b-footer-abs {
+      position: relative;
+      bottom: 0;
+    }
+    .slick {
+      &, &-item, &-list {
+        height: auto;
+      }
+    }
+  }
+}
+
+.btn-get-cost {
+  cursor: pointer;
 }

@@ -31,7 +31,7 @@ var Scroll = (function($) {
             ascensorInstance = ascensor.data('ascensor');
             ascensor.on("scrollStart", function(e, floor){
                 numberCurrentSection = floor.to;
-                //TODO: Предполагается, что видео находится только на первой секции. Если видео будет на нескольких сикциях, то можно будет это доработать
+                //TODO: Предполагается, что видео находится только на первой секции. Если видео будет на нескольких сикциях, то необходимо будет это доработать
                 numberCurrentSection == 0 && self._playVideo();
             });
             /*================================================
@@ -88,22 +88,31 @@ var Scroll = (function($) {
         },
         
         _resize: function () {
-            if(skel.vars.mobile || $(window).width() < 480) {
+            if(skel.vars.mobile || skel.breakpoint("small").active) {
                 $('body').css('overflow-y', 'auto');
                 // Mobile: Отключаемплагин fullpage
-                $.fn.fullpage.setMouseWheelScrolling(false);
-                $.fn.fullpage.setAllowScrolling(false);
+                this.fullPageDisable(false);
             } else {
                 $('body').css('overflow', 'hidden');
-                $.fn.fullpage.setMouseWheelScrolling(true);
-                $.fn.fullpage.setAllowScrolling(true);
+                this.fullPageDisable(true);
             }
+        },
+
+        /*
+         * Отключаем/включаем плагин fullpage
+         *
+         * @params {boolean} isActive
+         */
+        fullPageDisable: function (isActive) {
+            if(isActive && (skel.vars.mobile || skel.breakpoint("small").active)) {
+                isActive = false;
+            }
+            $.fn.fullpage.setMouseWheelScrolling(isActive);
+            $.fn.fullpage.setAllowScrolling(isActive);
         }
 
     };
 
-    return {
-        init: function() { return __.init(); }
-    };
+    return __;
 
 })($);
